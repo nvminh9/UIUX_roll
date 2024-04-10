@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="template/assets/css/library_grid_system.css">
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>ROLL UI/UX</title>
+</head>
+<body>
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-12 m-12 c-12 headerContainer">
+                <h2>Roll UI/UX Design</h2>
+            </div>
+            <div class="col l-12 m-12 c-12 mainContainer">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12 homeRefCtn">
+                        <h5>Nút xem giao diện Home: </h5><button id="btnHome" class="btnHomeRef">Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    *{
+        font-family: "Rubik", sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .headerContainer{
+        border-bottom: .5px solid #b2bec3;
+        margin: 0;
+    }
+    .headerContainer h2{
+        font-size: 35px;
+        color: #5caeff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .mainContainer{
+
+    }
+    .homeRefCtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+    .homeRefCtn h5{
+        font-size: 20px;
+        color: black;
+    }
+    .btnHomeRef{
+        margin: 10px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+        background: #5caeff;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: 3.5px dashed #2d3436;
+        cursor: pointer;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .btnHomeRef:hover{
+        transform: scale(1.06);
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+</style>
+
+<script>
+    let btnHome = document.getElementById('btnHome');
+    btnHome.addEventListener('click', function() {
+        window.location.href = "https://nvminh9.github.io/UIUX_roll/template/template_home.html"
+    })
+</script>
