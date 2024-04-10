@@ -1,0 +1,258 @@
+/* General CSS */
+html{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+body{
+    height: 100%;
+    background: #fff;
+}
+.grid.wide{
+    max-width: 100%;
+    background: #fff;
+}
+*{
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.main-wrapper{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* Main Container CSS */
+.main-container{
+    height: 100%;
+    background-color: #fff;
+}
+
+/* leftContainer CSS */
+.main-container .leftContainer{
+
+}
+    /* logoZone */
+    .leftContainer .logoZone{
+        height: 110px;
+    }
+    .leftContainer .logoZone .logoImg{
+        height: 100%;
+    }
+    .leftContainer .logoZone .logoImg img{
+        height: 100%;
+    }
+    /* hết logoZone */
+
+    /* menuZone */
+    .leftContainer .menuZone{
+        margin: 0;
+    }
+    .leftContainer .menuZone .col{
+        margin: 10px 0px 10px 0px;
+    }
+    .leftContainer .menuZone button{
+        font-weight: 500;
+        font-size: 20px;
+        width: 100%;
+        padding: 5%;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        border-radius: 10px;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .menuZone button:hover{
+        background: black;
+        color: white;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .menuZone button:hover .numberNoti{
+        background: white;
+        color: black;
+        
+    }
+    .leftContainer .menuZone button i{
+        float: left;
+        padding-top: 2%;
+    }
+    .leftContainer .menuZone button span{
+        margin-left: 13px;
+        float: left;
+        padding-top: 2%;
+    }
+    .leftContainer .menuZone button .numberNoti{
+        float: right;
+        color: white;
+        background-color: black;
+        padding: 5px 10px 5px 10px;
+        border: none;
+        border-radius: 50%;
+    }
+    /* hết menuZone */
+
+    /* musicPlayerZone */
+    .leftContainer .musicPlayerZone{
+        /* height: 120px; */
+        margin-top: 50%;
+    }
+    .leftContainer .CtnmusicPlayer{
+        /* background-color: rgb(196, 196, 196); */
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 10px;
+        padding: 0;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop{
+        margin-top: 3%;
+        /* height: 75%; */
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopSongImg{
+        padding: 0;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopSongImg img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .row{
+        margin: 0px 0px 5px 0px;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopSettings{
+        padding: 0;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopSettings button{
+        float: right;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 3px;
+        border-radius: 5px;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopSettings button:hover{
+        background: black;        
+        color: white;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopSongName{
+        text-align: center;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopFeature button{
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        border-radius: 5px;
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerTop .musicPlayerTopInfo .musicPlayerTopFeature button:hover{
+        transform: scale(1.2);
+        transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerBottom{
+        margin: 4%;
+        /* height: 25%; */
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerBottom .musicPlayerBottomTimeLine{
+        
+    }
+    .leftContainer .CtnmusicPlayer .musicPLayerBottom .musicPlayerBottomTimeLine span{
+        background-color: black;
+        border: none;
+        border-radius: 15px;
+        height: 3.7px;
+        display: block;
+    }
+    /* hết musicPlayerZone */
+/* hết CSS leftContainer */
+
+
+/* middleContainer CSS */
+.main-container .middleContainer{
+    overflow-x:hidden; 
+    overflow-y: auto; 
+    padding: 0; 
+    /* border-left: .5px solid black;  */
+    /* border-right: .5px solid black; */
+}
+.main-container .middleContainer .middleContainerMain{
+    position: relative; 
+    height:300%;
+    margin: 0; 
+    background: rgb(47,29,134);
+    background: linear-gradient(0deg, rgba(47,29,134,0.7400210084033614) 0%, rgba(89,218,236,0.8884803921568627) 100%);
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer{
+    position: fixed; 
+    /* height: 100px;  */
+    color: white; 
+    /* background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 7%, rgba(0,0,0,0.5439425770308124) 39%, rgba(0,0,0,1) 79%);  */
+    backdrop-filter: blur(20px);
+    background-color: #fffffff1;
+    /* ... */
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft, .headermiddleContainerRight{
+    /* height: 100%; */
+    width: 50%;
+    /* background-color: red; */
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft ul{
+    display: flex;
+    list-style: none;
+    /* height: 100%; */
+    align-items: center;
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft li{
+    /* padding: 5px; */
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft li button{
+    font-size: 26px;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    padding: 3px 5px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+.main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft li button:hover{
+    background: black;
+    color: whitesmoke;
+    border-radius: 8px;
+}
+/* hết CSS middleContainer */
+
+
+/* rightContainer CSS */
+.main-container .rightContainer{
+    /* background-color: yellowgreen; */
+}
+/* hết CSS rightContainer */

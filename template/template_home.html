@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9942475ef.js" crossorigin="anonymous"></script>
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Link Thư viện Grid system -->
+    <link rel="stylesheet" href="assets/css/library_grid_system.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/template_home.css">
+    <title>social network</title>
+</head>
+<body>
+    <div class="grid wide main-wrapper">
+        <div class="row main-container">
+            <!-- Container bên trái ... -->
+            <div class="col l-2 m-0 c-0 leftContainer">
+                <!-- Vùng chứa logo -->
+                <div class="row logoZone">
+                    <div class="col l-12 m-12 c-12 logoImg">
+                        <a href="#"><img src="assets/img/thefamlogo1.jpg" alt=""></a> 
+                    </div>
+                </div>
+                <!-- Vùng chứa menu -->
+                <div class="row menuZone">
+                    <div class="col l-12 m-12 c-12 CtnbtnNewsFeed">
+                        <button class="btnNewsFeed">
+                            <i class="fa-solid fa-house"></i><span>News Feed</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnNoti">
+                        <button class="btnNoti">
+                            <i class="fa-solid fa-bell"></i><span>Notification</span><span class="numberNoti">3</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnSearch">
+                        <button class="btnSearch">
+                            <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnMessages">
+                        <button class="btnMessages">
+                            <i class="fa-solid fa-message"></i><span>Messages</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnSettings">
+                        <button class="btnSettings">
+                            <i class="fa-solid fa-gear"></i><span>Settings</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Vùng chứa music player -->
+                <div class="row musicPlayerZone">
+                    <div class="col l-12 m-12 c-12 CtnmusicPlayer">
+                        <div class="row musicPLayerTop">
+                            <div class="col l-5 m-5 c-5 musicPlayerTopSongImg">
+                                <img src="assets/img/hinhDieforyouWeekndAriana.jfif" alt="">
+                            </div>
+                            <div class="col l-7 m-7 c-7 musicPlayerTopInfo">
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopSettings">
+                                        <button><i class="fa-solid fa-list-check"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopSongName">
+                                        <span>Die for you</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopFeature">
+                                        <div class="row">
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-caret-left"></i></button></div>
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-pause"></i></button></div>
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-caret-right"></i></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row musicPLayerBottom">
+                            <div class="col l-12 m-12 c-12 musicPlayerBottomTimeLine">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container ở giữa (chứa nội dung như các news feed, status,...) -->
+            <div class="col l-7 m-12 c-12 middleContainer">
+                <div class="row middleContainerMain">
+                    <div id="headermiddleContainer" class="col l-12 m-12 c-12 headermiddleContainer">
+                        <div class="row" style="height: 100%; margin: 0;">
+                            <div class="col l-6 m-6 c-6 headermiddleContainerLeft">
+                                <ul>
+                                    <li style="border-right: 1px solid black;">
+                                        <button id="btnFeeds">Feeds</button>
+                                    </li>
+                                    <li style="border-left: 1px solid black;">
+                                        <button id="btnRoll">Roll</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col l-6 m-6 c-6 headermiddleContainerRight">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container bên phải ... -->
+            <div class="col l-3 m-0 c-0 rightContainer">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Javascript -->
+    <script src="assets/js/event_handle.js"></script>
+</body>
+</html>
+
+<style>
+    .middleContainer::-webkit-scrollbar{
+        display: none;
+    }
+
+</style>
+
+<script>
+    let widthHeaderMiddleContainer = document.querySelector('.middleContainerMain').offsetWidth;
+    document.querySelector('#headermiddleContainer').style.width = widthHeaderMiddleContainer + "px";
+
+    setInterval(function() {
+        widthHeaderMiddleContainer = document.querySelector('.middleContainerMain').offsetWidth;
+        document.querySelector('#headermiddleContainer').style.width = widthHeaderMiddleContainer + "px";
+    }, 500);
+    
+</script>
