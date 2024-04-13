@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/library_grid_system.css">
     <!-- Link CSS -->
     <link rel="stylesheet" href="assets/css/template_home.css">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <title>social network</title>
 </head>
 <body>
@@ -29,27 +31,27 @@
                 <!-- Vùng chứa menu -->
                 <div class="row menuZone">
                     <div class="col l-12 m-12 c-12 CtnbtnNewsFeed">
-                        <button class="btnNewsFeed">
+                        <button id="btnNewsFeedid" class="btnNewsFeed">
                             <i class="fa-solid fa-house"></i><span>News Feed</span>
                         </button>
                     </div>
                     <div class="col l-12 m-12 c-12 CtnbtnNoti">
-                        <button class="btnNoti">
+                        <button id="btnNotiid" class="btnNoti">
                             <i class="fa-solid fa-bell"></i><span>Notification</span><span class="numberNoti">3</span>
                         </button>
                     </div>
                     <div class="col l-12 m-12 c-12 CtnbtnSearch">
-                        <button class="btnSearch">
+                        <button id="btnSearchid" class="btnSearch">
                             <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
                         </button>
                     </div>
                     <div class="col l-12 m-12 c-12 CtnbtnMessages">
-                        <button class="btnMessages">
+                        <button id="btnMessagesid" class="btnMessages">
                             <i class="fa-solid fa-message"></i><span>Messages</span>
                         </button>
                     </div>
                     <div class="col l-12 m-12 c-12 CtnbtnSettings">
-                        <button class="btnSettings">
+                        <button id="btnSettingsid" class="btnSettings">
                             <i class="fa-solid fa-gear"></i><span>Settings</span>
                         </button>
                     </div>
@@ -111,11 +113,44 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col l-12 m-12 c-12 headermiddleContainerBack">
+
+                    </div>
+                    <div class="col l-12 m-12 c-12 contentmiddleContainer">
+                        Hello
+                    </div>
                 </div>
             </div>
             <!-- Container bên phải ... -->
             <div class="col l-3 m-0 c-0 rightContainer">
                 
+            </div>
+        </div>
+        <div class="row navi-bar">
+            <div class="col l-2 m-2 c-2 navi-item naviBtnNewsFeed">
+                <button class="">
+                    <i class="fa-solid fa-house"></i>
+                </button>
+            </div>
+            <div class="col l-2 m-2 c-2 navi-item naviBtnNoti">
+                <button>
+                    <i class="fa-solid fa-bell"></i><span class="numberNoti">3</span>
+                </button>
+            </div>
+            <div class="col l-2 m-2 c-2 navi-item naviBtnSearch">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="col l-2 m-2 c-2 navi-item naviBtnMessages">
+                <button>
+                    <i class="fa-solid fa-message"></i>
+                </button>
+            </div>
+            <div class="col l-2 m-2 c-2 navi-item naviBtnSettings" style="border-right: none;">
+                <button>
+                    <i class="fa-solid fa-gear"></i>
+                </button>
             </div>
         </div>
     </div>
