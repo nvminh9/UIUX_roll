@@ -1,3 +1,12 @@
+// let widthHeaderMiddleContainer = document.querySelector('.middleContainerMain').offsetWidth;
+//     document.querySelector('#headermiddleContainer').style.width = widthHeaderMiddleContainer + "px";
+
+// setInterval(function() {
+//     widthHeaderMiddleContainer = document.querySelector('.middleContainerMain').offsetWidth;
+//     document.querySelector('#headermiddleContainer').style.width = widthHeaderMiddleContainer + "px";
+// }, 500);
+
+
 // Header button
 let btnFeeds = document.getElementById('btnFeeds')
 let btnRoll = document.getElementById('btnRoll')
@@ -43,7 +52,7 @@ $('.btnNewsFeed').click(function(){
     btnMessages.style.color = "black"
     btnSettings.style.background = "white"
     btnSettings.style.color = "black"
-    document.querySelector('.contentmiddleContainer').innerHTML = `<h1>News Feed</h1>`
+    // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>News Feed</h1>`
 });
 // Button Notifications
 $('.btnNoti').click(function(){
@@ -57,7 +66,7 @@ $('.btnNoti').click(function(){
     btnMessages.style.color = "black"
     btnSettings.style.background = "white"
     btnSettings.style.color = "black"
-    document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Notifications</h1>`
+    // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Notifications</h1>`
 });
 // Button Search
 $('.btnSearch').click(function(){
@@ -71,7 +80,7 @@ $('.btnSearch').click(function(){
     btnMessages.style.color = "black"
     btnSettings.style.background = "white"
     btnSettings.style.color = "black"
-    document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Search</h1>`
+    // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Search</h1>`
 });
 // Button Messages
 $('.btnMessages').click(function(){
@@ -85,7 +94,7 @@ $('.btnMessages').click(function(){
     btnNewsFeed.style.color = "black"
     btnSettings.style.background = "white"
     btnSettings.style.color = "black"
-    document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Messages</h1>`
+    // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Messages</h1>`
 });
 // Button Settings
 $('.btnSettings').click(function(){
@@ -99,5 +108,8 @@ $('.btnSettings').click(function(){
     btnMessages.style.color = "black"
     btnNewsFeed.style.background = "white"
     btnNewsFeed.style.color = "black"
-    document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Settings</h1>`
+    // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Settings</h1>`
 });
+
+
+

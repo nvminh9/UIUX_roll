@@ -25,6 +25,8 @@ body{
 
 /* Main Container CSS */
 .main-container{
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     background-color: #fff;
 }
@@ -37,10 +39,14 @@ body{
     .leftContainer .logoZone{
         height: 110px;
     }
-    .leftContainer .logoZone .logoImg{
+    .logoImg{
         height: 100%;
+        text-align: center;
     }
-    .leftContainer .logoZone .logoImg img{
+    .logoImg img{
+        object-fit: cover;
+        /* object-position: center; */
+        /* width: 25%; */
         height: 100%;
     }
     /* hết logoZone */
@@ -202,14 +208,16 @@ body{
 }
 .main-container .middleContainer .middleContainerMain{
     position: relative; 
-    height:300%;
+    /* height:300%; */
     margin: 0; 
-    background: rgb(47,29,134);
-    background: linear-gradient(0deg, rgba(47,29,134,0.7400210084033614) 0%, rgba(89,218,236,0.8884803921568627) 100%);
+    /* background: rgb(47,29,134);
+    background: linear-gradient(0deg, rgba(47,29,134,0.7400210084033614) 0%, rgba(89,218,236,0.8884803921568627) 100%); */
 }
 .main-container .middleContainer .middleContainerMain .headermiddleContainer{
     position: fixed; 
-    /* height: 100px;  */
+    left: 0;
+    right: 0;
+    height: 76.4px; 
     color: white; 
     backdrop-filter: blur(20px);
     /* ... */
@@ -217,11 +225,7 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
     background: linear-gradient(0deg, rgb(255 255 255 / 56%) 0%, rgb(255 255 255 / 54%) 100%);
-}
-
-.main-container .middleContainer .middleContainerMain .headermiddleContainerBack{
-    height: 4%;
-    background: transparent;
+    /* border-radius: 0px 0px 10px 10px; */
 }
 
 .main-container .middleContainer .middleContainerMain .contentmiddleContainer{
@@ -232,6 +236,8 @@ body{
     /* height: 100%; */
     width: 50%;
     /* background-color: red; */
+    display: grid;
+    justify-content: right;
 }
 .main-container .middleContainer .middleContainerMain .headermiddleContainer .headermiddleContainerLeft ul{
     display: flex;
@@ -256,6 +262,31 @@ body{
     color: whitesmoke;
     border-radius: 8px;
 }
+
+.headerBack{
+    /* background-color: red; */
+    height: 76.4px;
+}
+
+/* contentMiddle */
+.contentMiddle{
+    height: 100%;
+    /* width: 100%; */
+    text-align: center;
+    padding: 15px;
+}
+
+/* CSS bài đăng postContainer */
+.postContainer{
+    background-color: red;
+    height: 500px;
+    border-radius: 10px;
+}
+/*  */
+
+/* ...hết contentMiddle */
+
+
 /* hết CSS middleContainer */
 
 
@@ -269,7 +300,7 @@ body{
 
 /* CSS NAVIGATION BAR */
 .navi-bar{
-    height: 10%;
+    /* height: 10%; */
     /* background-color: blueviolet; */
     border-radius: 25px 25px 0px 0px;
     justify-content: center;
@@ -315,3 +346,18 @@ body{
 .navi-bar .navi-item .naviBtnNoti button .numberNoti{
     color: red;
 }
+
+
+/* Scroll Bar */
+.middleContainer::-webkit-scrollbar{
+    display: block;
+    width: 0.2em;
+}
+.middleContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.middleContainer::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+/* ...hết scroll bar */

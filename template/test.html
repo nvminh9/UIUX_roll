@@ -14,15 +14,33 @@
     <!-- Link Thư viện Grid system -->
     <link rel="stylesheet" href="assets/css/library_grid_system.css">
     <!-- Link CSS -->
-    <link rel="stylesheet" href="assets/css/template_home.css">
+    <link rel="stylesheet" href="assets/css/test.css">
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <title>Roll</title>
 </head>
 <body>
-    <div class="grid wide main-wrapper" style="">
-        <div class="row main-container">
-            <!-- Container bên trái ... -->
+    <div class="grid wide wrapper">
+        <div class="row headerContainer">
+            <div class="col l-2 m-3 c-3 logoImg">
+                <a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>
+            </div>
+            <div class="col l-7 m-9 c-9 headerContainerMiddle">
+                <ul>
+                    <li style="border-right: 1px solid black;">
+                        <button id="btnFeeds">Feeds</button>
+                    </li>
+                    <li style="border-left: 1px solid black;">
+                        <button id="btnRoll">Roll</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col l-3 m-0 c-0 headerContainerRight">
+
+            </div>
+        </div>
+        <div class="row container">
+            <!-- Phần khung bên trái -->
             <div class="col l-2 m-0 c-0 leftContainer">
                 <!-- Vùng chứa logo -->
                 <div class="row logoZone">
@@ -95,88 +113,68 @@
                     </div>
                 </div>
             </div>
-            <!-- Container ở giữa (chứa nội dung như các news feed, status,...) -->
+            <!-- Phần khung bên ở giữa -->
             <div class="col l-7 m-12 c-12 middleContainer">
-                <div class="row middleContainerMain">
-                    <div id="headermiddleContainer" class="col l-12 m-12 c-12 headermiddleContainer">
-                        <div class="row" style="height: 100%; margin: 0; justify-content: center; align-items: center;">
-                            <div class="col l-2 m-2 c-2 logoImg">
-                                <a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a> 
+                <!-- Phần thừa để đẩy bài đầu xuống ko bị che -->
+                <div class="row headerBack"></div>
+                <!-- Bài đăng -->
+                <div class="row postWrapper">
+                    <div class="col l-12 m-12 c-12 postContainer">
+                        <div class="col l-12 m-12 c-12 postHeader">
+                            <div class="poster">
+                                <div class="posterAvatar">
+                                    <button class="btnPosterAvatar">
+                                        <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    </button>
+                                </div>
+                                <div class="posterInfo">
+                                    <button><span class="posterName">nvmiinh</span></button>
+                                    <button><span class="posterTime">10 giờ trước</span></button>
+                                </div>
                             </div>
-                            <div class="col l-7 m-10 c-10 headermiddleContainerLeft">
-                                <ul>
-                                    <li style="border-right: 1px solid black;">
-                                        <button id="btnFeeds">Feeds</button>
-                                    </li>
-                                    <li style="border-left: 1px solid black;">
-                                        <button id="btnRoll">Roll</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col l-3 m-0 c-0 headermiddleContainerRight">
-    
+                            <div class="postExtend">
+
                             </div>
                         </div>
-                    </div>
-                    <div id="contentTest" class="col l-12 m-12 c-12 contentmiddleContainer">
-                        <div class="row headerBack">
+                        <div class="col l-12 m-12 c-12 postContent">
                             
                         </div>
-                        <div id="contentMiddle" class="row contentMiddle">
-                            <!-- bài đăng -->
-                            <div class="col l-12 m-12 c-12 postContainer">
+                        <div class="col l-12 m-12 c-12 postInteract">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Bài đăng -->
+                <div class="row postWrapper">
+                    <div class="col l-12 m-12 c-12 postContainer">
+                        <div class="col l-12 m-12 c-12 postHeader">
+                            <div class="poster">
+                                <div class="posterAvatar">
+                                    <button class="btnPosterAvatar">
+                                        <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    </button>
+                                </div>
+                                <div class="posterInfo">
+                                    <button><span class="posterName">nvmiinh</span></button>
+                                    <button><span class="posterTime">10 giờ trước</span></button>
+                                </div>
+                            </div>
+                            <div class="postExtend">
 
                             </div>
-                            <!-- bài đăng -->
-                            <div class="col l-12 m-12 c-12 postContainer">
-
-                            </div>
-                            <!-- bài đăng -->
-                            <div class="col l-12 m-12 c-12 postContainer">
-
-                            </div>
-                            <!-- bài đăng -->
-                            <div class="col l-12 m-12 c-12 postContainer">
-
-                            </div>
+                        </div>
+                        <div class="col l-12 m-12 c-12 postContent">
+                            
+                        </div>
+                        <div class="col l-12 m-12 c-12 postInteract">
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Container bên phải ... -->
+            <!-- Phần khung bên phải -->
             <div class="col l-3 m-0 c-0 rightContainer">
-                
-            </div>
-        </div>
-        <div class="row navi-bar">
-            <div class="col l-0 m-12 c-12 navi-barContainer" style="height: 50px;">
-                <div class="row" style="height: 100%; justify-content: center;">
-                    <div class="col l-2 m-2 c-2 navi-item naviBtnNewsFeed">
-                        <button class="">
-                            <i class="fa-solid fa-house"></i>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-2 c-2 navi-item naviBtnNoti">
-                        <button>
-                            <i class="fa-solid fa-bell"></i><span class="numberNoti">3</span>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-2 c-2 navi-item naviBtnSearch">
-                        <button>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-2 c-2 navi-item naviBtnMessages">
-                        <button>
-                            <i class="fa-solid fa-message"></i>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-2 c-2 navi-item naviBtnSettings" style="border-right: none;">
-                        <button>
-                            <i class="fa-solid fa-gear"></i>
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
