@@ -19,7 +19,10 @@
             <div class="col l-12 m-12 c-12 mainContainer">
                 <div class="row">
                     <div class="col l-12 m-12 c-12 homeRefCtn">
-                        <h5>Nút xem giao diện Home: </h5><button id="btnHome" class="btnHomeRef">Home</button>
+                        <h5>Nút xem giao diện Home (Chưa Fix): </h5><button id="btnHome" class="btnHomeRef">Home</button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 homeRefCtn">
+                        <h5>Nút xem giao diện Home (Đã Fix): </h5><button id="btnHomeFixed" class="btnHomeRef">Home</button>
                     </div>
                 </div>
             </div>
@@ -88,7 +91,11 @@
 
 <script>
     let btnHome = document.getElementById('btnHome');
+    let btnHomeFixed = document.getElementById('btnHomeFixed');
     btnHome.addEventListener('click', function() {
         window.location.href = "https://nvminh9.github.io/UIUX_roll/template/template_home.html"
+    })
+    btnHomeFixed.addEventListener('click', function() {
+        window.location.href = "https://nvminh9.github.io/UIUX_roll/template/test.html"
     })
 </script>
