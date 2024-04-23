@@ -273,7 +273,7 @@ body{
     
 }
 .postContainer{
-    height: 400px;
+    /* height: 400px; */
     /* background-color: antiquewhite; */
     padding: 10px;
 }
@@ -283,7 +283,7 @@ body{
     background-color: #101010;
     border-radius: 10px 10px 0px 0px;
     display: flex;
-    padding: 10px;
+    padding: 15px;
 }
 .postContainer .postHeader .poster{
     height: 100%;
@@ -353,6 +353,39 @@ body{
 .postContainer .postContent{
     /* height: 75%; */
     background-color: #101010;
+    padding: 0px 15px 15px 15px;
+}
+/* phần caption của bài đăng (postCaption) */
+.postContainer .postContent .postCaption{
+    padding: 0px 10px 10px 5px;
+}
+.postContainer .postContent .postCaption span{
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 300;
+    word-spacing: 1.3px;
+}
+/* phần hình ảnh của bài đăng (postImages) */
+.postContainer .postContent .postImages{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    transition: all .3s;
+}
+.postImages::-webkit-scrollbar{
+    display: none;
+}
+.postContainer .postContent .postImages .postImageContainer{
+    padding: 3px;
+    margin: 0 auto;
+    height: 350px;
+}
+.postContainer .postContent .postImages .postImageContainer img{
+    height: 100%;
+    border: 0.2px solid dimgrey;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 /* ... */
 /* Post Interact */
