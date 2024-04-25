@@ -95,10 +95,9 @@ body{
 .leftContainer{
 
 }
-
 /* logoZone */
 .leftContainer .logoZone{
-    height: 110px;
+    height: 68.4px;
     margin: 0;
 }
 .logoImg{
@@ -136,7 +135,7 @@ body{
     -o-transition: 0.20s;
 }
 .leftContainer .menuZone button:hover{
-    background: black;
+    background: #0f1112;
     color: white;
     transition: 0.20s;
     -webkit-transition: 0.20s;
@@ -147,7 +146,6 @@ body{
 .leftContainer .menuZone button:hover .numberNoti{
     background: white;
     color: black;
-    
 }
 .leftContainer .menuZone button i{
     float: left;
@@ -171,14 +169,18 @@ body{
 /* musicPlayerZone */
 .leftContainer .musicPlayerZone{
     /* height: 120px; */
-    margin-top: 50%;
+    margin-top: 40%;
+    justify-content: center;
+    align-items: center;
 }
 .leftContainer .CtnmusicPlayer{
     /* background-color: rgb(196, 196, 196); */
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
+    background-color: #87878750;
     border: none;
     border-radius: 10px;
     padding: 0;
+    height: fit-content;
 }
 .leftContainer .CtnmusicPlayer .musicPLayerTop{
     margin-top: 3%;
@@ -268,7 +270,9 @@ body{
     overflow-x: hidden;
     overflow-y: auto;
 }
-
+.middleContainer::-webkit-scrollbar{
+    display: none;
+}
 /* CSS bài đăng */
 .postWrapper{
     
@@ -460,3 +464,20 @@ body{
 /* Hết CSS bài đăng */
 
 /* ----------- Hết CSS Khung ở giữa (middleContainer) --------- */
+
+/* Dark Mode CSS Class */
+.darkmode{
+    background: black;
+    color: whitesmoke;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%); */
+}
+.headerDarkmode{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
+    color: whitesmoke;
+}
+.btnMenuDarkMode{
+    color: whitesmoke;
+}
+.postBackground{
+    background-color: black;
+}
