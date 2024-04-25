@@ -80,6 +80,7 @@ body{
     padding: 3px 5px;
     cursor: pointer;
     margin: 0px 5px;
+    color: black;
 }
 .headerContainer .headerContainerMiddle li button:hover{
     background: black;
@@ -287,7 +288,8 @@ body{
 }
 .postContainer .postHeader .poster{
     height: 100%;
-    width: 50%;
+    /* width: 50%; */
+    width: 100%;
     display: flex;
 }
 .postContainer .postHeader .poster .posterAvatar{
@@ -346,14 +348,14 @@ body{
 /* CSS phần 3 chấm của bài đăng (postExtend)  */
 .postExtend{
     height: 100%;
-    width: 50%;
+    /* width: 50%; */
 }
 /* ... */
 /* Post Content */
 .postContainer .postContent{
     /* height: 75%; */
     background-color: #101010;
-    padding: 0px 15px 15px 15px;
+    padding: 0px 15px 0px 15px;
 }
 /* phần caption của bài đăng (postCaption) */
 .postContainer .postContent .postCaption{
@@ -361,6 +363,7 @@ body{
 }
 .postContainer .postContent .postCaption span{
     color: whitesmoke;
+    font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 300;
     word-spacing: 1.3px;
@@ -394,6 +397,65 @@ body{
     background-color: #101010;
     border-radius: 0px 0px 10px 10px;
 }
+/* Phần tim/xem bình luận/chia sẻ/  (postReact) */
+.postContainer .postInteract .postReact{
+    display: flex;
+    padding: 3px 10px;
+    /* padding-top: 0px;
+    padding-bottom: 0px; */
+}
+.postContainer .postInteract .postReact .btnReactContainer{
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.postContainer .postInteract .postReact .btnReactContainer span{
+    margin: 0px 5px;
+}
+.postContainer .postInteract .postReact .btnReactContainer .btnReact{
+    background: transparent;
+    color: black;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px 6px;
+    /* margin-right: 5px; */
+}
+.postContainer .postInteract .postReact .btnReactContainer .btnReact:hover{
+    background-color: rgba(131, 131, 131, 0.438);
+}
+.postContainer .postInteract .postReact .btnReactContainer .btnLike:hover{
+    color: #ff3838;        
+}
+.postContainer .postInteract .postReact .btnReactContainer .btnComment:hover{
+    color: #3ae374;        
+}
+.postContainer .postInteract .postReact .btnReactContainer .btnShare:hover{
+    color: #17c0eb;        
+}
+/* ... */
+/* Phần Nhập bình luận (postComment) */
+.postContainer .postInteract .postComment{
+    padding: 10px;
+    padding-top: 0px;
+    display: flex;
+}
+.postContainer .postInteract .postComment .forminputComment{
+    width: 100%;
+}
+.postContainer .postInteract .postComment .inputComment{
+    border: none;
+    /* border-radius: 10px; */
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: whitesmoke;
+    border-bottom: .5px solid dimgrey;
+}
+/* ... */
 /* ... */
 /* Hết CSS bài đăng */
 
