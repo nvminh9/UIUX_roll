@@ -23,7 +23,12 @@
 <body>
     <div id="wrapperID" class="grid wide wrapper">
         <div id="headerContainerID" class="row headerContainer">
-            <div id="logoImgID" class="col l-2 m-3 c-3 logoImg">
+            <div class="col l-0 m-1 c-1 btnExpandMenuContainer">
+                <button id="btnExpandMenuID" class="btnExpandMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id="logoImgID" class="col l-2 m-2 c-2 logoImg">
                 <a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>
             </div>
             <div class="col l-7 m-9 c-9 headerContainerMiddle">
@@ -42,7 +47,7 @@
         </div>
         <div class="row container">
             <!-- Phần khung bên trái -->
-            <div class="col l-2 m-0 c-0 leftContainer">
+            <div id="leftContainerID" class="col l-2 m-0 c-0 leftContainer">
                 <!-- Vùng chứa logo -->
                 <div class="row logoZone">
                     <div class="col l-12 m-12 c-12 logoImg">
@@ -120,7 +125,7 @@
                 </div>
             </div>
             <!-- Phần khung bên ở giữa -->
-            <div class="col l-7 m-12 c-12 middleContainer">
+            <div id="middleContainerID" class="col l-7 m-12 c-12 middleContainer">
                 <!-- Phần thừa để đẩy bài đầu xuống ko bị che -->
                 <div class="row headerBack"></div>
                 <!-- Bài đăng -->
@@ -363,7 +368,7 @@
                 </div>
             </div>
             <!-- Phần khung bên phải -->
-            <div class="col l-3 m-0 c-0 rightContainer">
+            <div id="rightContainerID" class="col l-3 m-0 c-0 rightContainer">
 
             </div>
         </div>

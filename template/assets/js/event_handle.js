@@ -111,7 +111,7 @@ btnRoll.addEventListener("click", function() {
 //     // document.querySelector('.contentmiddleContainer').innerHTML = `<h1>Settings</h1>`
 // });
 
-// --------------- Dark Mode -------------------------
+// ---------------------------*** DARK MODE ***------------------------------------------
 // kiểm tra biến 'darkMode' đã lưu trong Local Storage và gán vào biến darkMode
 let darkMode = localStorage.getItem('darkMode'); 
 // query nút darkmode, wrapper và headerContainer
@@ -173,5 +173,16 @@ btnDarkMode.addEventListener('click', () => {
     disableDarkMode(); 
   }
 });
-// ---------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
+// ----------------------------------*** EXPAND MEMU ***-------------------------------------
+const btnExpandMenu = document.getElementById('btnExpandMenuID')
+
+const expandMenu = () => {
+  console.log('Test btnExpandMenu')
+}
+
+btnExpandMenu.addEventListener('click', () => {
+  expandMenu();
+});
+// ------------------------------------------------------------------------------------------
