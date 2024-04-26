@@ -125,7 +125,11 @@ body{
 /* ----------- CSS khung bên Trái (leftContainer) ------------- */
 
 .leftContainer{
-
+    transition: 0.30s;
+    -webkit-transition: 0.30s;
+    -moz-transition: 0.30s;
+    -ms-transition: 0.30s;
+    -o-transition: 0.30s;
 }
 /* logoZone */
 .leftContainer .logoZone{
@@ -301,6 +305,11 @@ body{
     /* background-color: gainsboro; */
     overflow-x: hidden;
     overflow-y: auto;
+    /* transition: 0.30s;
+    -webkit-transition: 0.30s;
+    -moz-transition: 0.30s;
+    -ms-transition: 0.30s;
+    -o-transition: 0.30s; */
 }
 .middleContainer::-webkit-scrollbar{
     display: none;

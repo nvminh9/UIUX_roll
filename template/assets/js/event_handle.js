@@ -176,13 +176,33 @@ btnDarkMode.addEventListener('click', () => {
 // ------------------------------------------------------------------------------------------
 
 // ----------------------------------*** EXPAND MEMU ***-------------------------------------
+var checkExpandMenu = false;
 const btnExpandMenu = document.getElementById('btnExpandMenuID')
 
+// query DOM
+const leftCtn = document.getElementById('leftContainerID')
+const middleCtn = document.getElementById('middleContainerID')
+
 const expandMenu = () => {
-  console.log('Test btnExpandMenu')
+  leftCtn.className = "col l-2 m-5 c-5 leftContainer"
+  middleCtn.className = "col l-7 m-7 c-7 middleContainer"
+  checkExpandMenu = true
+  console.log('Mở Menu')
+}
+
+const closeMenu = () => {
+  leftCtn.className = "col l-2 m-0 c-0 leftContainer"
+  middleCtn.className = "col l-7 m-12 c-12 middleContainer"
+  checkExpandMenu = false
+  console.log('Đóng Menu')
 }
 
 btnExpandMenu.addEventListener('click', () => {
-  expandMenu();
+  // kiểm tra xem menu đang đóng hay mở và thực hiện hành động ngược lại 
+  if(checkExpandMenu === false){
+    expandMenu();
+  }else{
+    closeMenu();
+  }
 });
 // ------------------------------------------------------------------------------------------
