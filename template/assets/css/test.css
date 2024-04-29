@@ -428,7 +428,6 @@ body{
     overflow-y: hidden;
     overflow-x: auto;
     scroll-behavior: smooth;
-    transition: all .3s;
 }
 .postImages::-webkit-scrollbar{
     display: none;

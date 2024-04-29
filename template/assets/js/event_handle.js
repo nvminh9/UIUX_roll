@@ -211,11 +211,37 @@ const postImageCtn = document.querySelectorAll('.postImages');
 let startX = 0;
 let pressed = false;
 
+// Phát hiện khi người dùng bấm chuột xuống ở phạm vi postImages (khung chứa các hình của bài đăng)
 for(let i=0; i<postImageCtn.length; i++){
   postImageCtn[i].addEventListener('mousedown', function (e) {
     startX = e.clientX;
-  
+    pressed = true;
     console.log(startX);
+    console.log(pressed)
+  })
+}
+// Phát hiện chuột rời khỏi phạm vi khung (cho pressed bằng false)
+for(let i=0; i<postImageCtn.length; i++){
+  postImageCtn[i].addEventListener('mouseleave', function (e) {
+    pressed = false;    
+    console.log(pressed);
+  })
+}
+// Phát hiện chuột khi người dùng thả nút chuột (cho pressed bằng false)
+window.addEventListener('mouseup', function (e) {
+  pressed = false;
+  console.log(pressed)
+})
+// Xử lý kéo slide hình theo con trỏ chuột 
+for(let i=0; i<postImageCtn.length; i++){
+  postImageCtn[i].addEventListener('mousemove', function (e) {
+    if(!pressed){
+      return
+    }
+    // tính toán slide hình sẽ di chuyển qa trái hay phải bao nhiu
+    // scrollLeft += số dương (sẽ qua trái)
+    // scrollLeft += số âm (sẽ qua phải)
+    this.scrollLeft += startX - e.clientX;
   })
 }
 // ------------------------------------------------------------------------------------------
