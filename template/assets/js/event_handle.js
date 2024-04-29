@@ -206,3 +206,16 @@ btnExpandMenu.addEventListener('click', () => {
   }
 });
 // ------------------------------------------------------------------------------------------
+// ----------------------*** KÉO DI CHUYỂN SLIDE HÌNH CỦA BÀI VIẾT ***-----------------------
+const postImageCtn = document.querySelectorAll('.postImages');
+let startX = 0;
+let pressed = false;
+
+for(let i=0; i<postImageCtn.length; i++){
+  postImageCtn[i].addEventListener('mousedown', function (e) {
+    startX = e.clientX;
+  
+    console.log(startX);
+  })
+}
+// ------------------------------------------------------------------------------------------
