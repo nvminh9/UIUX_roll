@@ -427,7 +427,12 @@ body{
     display: flex;
     overflow-y: hidden;
     overflow-x: auto;
+    scroll-snap-type: x;
     scroll-behavior: smooth;
+    scrollbar-width: none; /* for firefox */
+}
+.postContainer .postContent .postImages:hover{
+    cursor: grab;
 }
 .postImages::-webkit-scrollbar{
     display: none;
@@ -436,6 +441,7 @@ body{
     padding: 3px;
     margin: 0 auto;
     height: 350px;
+    scroll-snap-align: start;
 }
 .postContainer .postContent .postImages .postImageContainer img{
     height: 100%;

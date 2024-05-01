@@ -216,6 +216,7 @@ for(let i=0; i<postImageCtn.length; i++){
   postImageCtn[i].addEventListener('mousedown', function (e) {
     startX = e.clientX;
     pressed = true;
+    // this.style.cursor = 'grabbing';
     console.log(startX);
     console.log(pressed)
   })
@@ -230,13 +231,14 @@ for(let i=0; i<postImageCtn.length; i++){
 // Phát hiện chuột khi người dùng thả nút chuột (cho pressed bằng false)
 window.addEventListener('mouseup', function (e) {
   pressed = false;
+  // wrapper.style.cursor  = 'grab'
   console.log(pressed)
 })
-// Xử lý kéo slide hình theo con trỏ chuột 
+// Xử lý kéo slide hình theo con trỏ chuột
 for(let i=0; i<postImageCtn.length; i++){
   postImageCtn[i].addEventListener('mousemove', function (e) {
     if(!pressed){
-      return
+      return;
     }
     // tính toán slide hình sẽ di chuyển qa trái hay phải bao nhiu
     // scrollLeft += số dương (sẽ qua trái)
