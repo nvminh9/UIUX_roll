@@ -535,7 +535,42 @@ body{
 
 /* ----------- Hết CSS Khung ở giữa (middleContainer) --------- */
 
-/* Dark Mode CSS Class */
+/* ----------- Phần CSS Khung bên phải (rightContainer) --------- */
+
+.rightContainer{
+
+}
+/* CSS phần Story */
+.rightContainer .storyContainer{
+    
+}
+.rightContainer .storyContainer .storyContainerTitle{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 23px;
+}
+.rightContainer .storyContainer .storyContainerTitle i{
+    color: #243CFC;
+}
+.rightContainer .storyContainer .storyContainerTitle span{
+    margin: 0px 10px;
+    font-weight: 900;
+}
+.rightContainer .storyContainer .storyContainerIcon{
+    
+}
+.rightContainer .storyContainer .storyContainerIcon img{
+    
+}
+.rightContainer .storyContainer .listStory{
+    
+}
+/* hết CSS phần Story */
+
+/* ----------- Hết CSS Khung bên phải (rightContainer) --------- */
+
+/* --------------- *** Dark Mode CSS Class *** ---------------- */
 .darkmode{
     background: black;
     color: whitesmoke;
@@ -551,3 +586,4 @@ body{
 .postBackground{
     background-color: black;
 }
+/* ------------------------------------------------------------ */
