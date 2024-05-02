@@ -207,6 +207,21 @@ body{
     border-radius: 50%;
     margin-left: 5px;
 }
+.leftContainer .menuZone .CtnbtnProfile .btnProfile{
+    
+}
+.leftContainer .menuZone .CtnbtnProfile .btnProfile img{
+    vertical-align: middle;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    /* border: 0.2px solid dimgrey; */
+}
+.leftContainer .menuZone .CtnbtnProfile .btnProfile span{
+    
+}
 /* hết menuZone */
 
 /* musicPlayerZone */
