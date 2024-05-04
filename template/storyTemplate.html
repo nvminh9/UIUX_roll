@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/icon/roll-favicon-color.png">
+    <!-- Link Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9942475ef.js" crossorigin="anonymous"></script>
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- Link Thư viện Grid system -->
+    <link rel="stylesheet" href="assets/css/library_grid_system.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/test.css">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- ReactJS -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> 
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Story | Roll</title>
+</head>
+<body>
+    <div class="grid wide mainWrapper">
+        <!-- Nút điều khiền video story -->
+        <div class="row btnWrapper">
+            <div class="col l-12 m-12 c-12 btnContainer">
+                <ul>
+                    <li>
+                        <button id="btnPlayPause">PLay</button>
+                    </li>
+                    <li>
+                        <button id="btnZoomScale">Zoom</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Phần Story -->
+        <div class="row storyWrapper">
+            <div class="col l-12 m-12 c-12 storyContainer">
+                <button id="btnBackStoryID" class="col l-1 m-1 c-1 btnBackStory">
+                    <
+                </button>
+                <div class="col l-10 m-10 c-10 storyVideo">
+                    <video id="storyID" class="story" src="" poster="" autoplay controls loop></video>
+                </div>
+                <button id="btnNextStoryID" class="col l-1 m-1 c-1 btnNextStory">
+                    >
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // lấy nút play/pause video từ DOM
+        const btnPlayPause = document.getElementById('btnPlayPause');
+        // lấy nút phóng to / thu nhỏ video từ DOM
+        const btnZoomScale = document.getElementById('btnZoomScale');
+        // lấy nút lùi lại story trước trong DOM 
+        const btnBackStory = document.getElementById('btnBackStoryID');
+        // lấy nút chuyển qua story tiếp trong DOM 
+        const btnNextStory = document.getElementById('btnNextStoryID');
+        // lấy video story từ DOM
+        const story1 = document.querySelector('.story');
+        const storyVideo = document.getElementById('storyID');
+
+        // tạo một biến lưu index của story hiện tại 
+        // (có thể là data-... của story mà người dùng bấm vào), vì là test nên ở đây sẽ cho mặc định là 0
+        // thực tế có thể khởi tạo biến này trong hàm xử lý bấm vào story video
+        var storyCurrentIndex = 0;
+
+        // Data Test (danh sách đối tượng Story)
+        var listStory = [
+            {
+                source: "story1.mp4",
+                poster: "poster1.png"
+            },
+            {
+                source: "story2.mp4",
+                poster: "poster2.png"
+            }
+        ]
+
+        window.onload = () => {
+            setStory(listStory);
+        }
+
+        function setStory(listStory){
+            console.log("assets/media/video/" + listStory[storyCurrentIndex]['source'])
+            storyVideo.src = "assets/media/video/" + listStory[storyCurrentIndex]['source'];
+            storyVideo.poster = "assets/media/images/" + listStory[storyCurrentIndex]['poster'];
+        }
+
+        // xử lý nút play/pause video
+        btnPlayPause.addEventListener('click', function (e){
+            if(story1.paused){
+                story1.play();
+                btnPlayPause.innerText = "Pause"
+            }else{
+                story1.pause();
+                btnPlayPause.innerText = "Play"
+            }
+        })
+        // xử lý nút phóng to / thu nhỏ video
+        var isZoom = false;
+        btnZoomScale.addEventListener('click', function (e){
+            if(!isZoom){
+                story1.classList.add("storyVideoZoom");
+                story1.style.borderRadius = "10px";
+                isZoom = true;
+            }else{
+                story1.classList.remove("storyVideoZoom");
+                story1.style.borderRadius = "10px";
+                isZoom = false
+            }
+        })
+        // xử lý nút chuyển video
+        console.log(storyCurrentIndex)
+        btnBackStory.addEventListener('click', function(e){
+            console.log("lùi")
+            //
+            // kiếm tra xem listStory có tồn tại ko (thực tế có thể kiểm tra xem data về list story đã lấy được từ API chưa, đã có chưa)
+            if(listStory){
+                // nếu list story tồn tại
+                // kiểm tra story trước đó có ko
+                if(listStory[storyCurrentIndex - 1]){
+                    // giảm story index ban đầu đi 1 
+                    // (storyCurrentIndex ban đầu được gán bằng data-... hay id j đó của video mà người dùng bấm vào)
+                    storyCurrentIndex = storyCurrentIndex - 1;
+                    // sau đó gán vào src của video story như sau với (index đã xử lý)
+                    storyVideo.src = "assets/media/video/" + listStory[storyCurrentIndex]['source'];
+                    storyVideo.poster = "assets/media/images/" + listStory[storyCurrentIndex]['poster'];
+                }
+                else{
+                    console.log("Story trước đó ko tồn tại")
+                }
+            }else{
+                // nếu list story ko tồn tại
+                console.log("Chưa nhận được Data Story")
+            }
+            
+        })
+        btnNextStory.addEventListener('click', function(e){
+            console.log('tiến')
+            //
+            if(listStory){
+                // nếu list story tồn tại
+                // kiếm tra xem video story tiếp theo có tồn tại ko
+                if(listStory[storyCurrentIndex + 1]){
+                    // tương tự logic ở trên nhưng ở đây index sẽ được +1 do là nút tiến tới story tiếp theo
+                    storyCurrentIndex = storyCurrentIndex + 1;
+                    // gán vào src tương tự như trên
+                    storyVideo.src = "assets/media/video/" + listStory[storyCurrentIndex]['source'];
+                    storyVideo.poster = "assets/media/images/" + listStory[storyCurrentIndex]['poster'];
+                }
+                else{
+                    console.log("Story tiếp theo ko tồn tại")
+                }
+            }else{
+                // nếu list story ko tồn tại
+                console.log("Chưa nhận được Data Story")
+            }
+            
+        })
+        
+        if(listStory){
+            console.log(listStory)
+        }
+    </script>
+</body>
+</html>
+<style>
+    /* Main Wrapper */
+    .mainWrapper{
+        height: 100%;
+    }
+    /* ------------- */
+    /* CSS phần Nút điều khiển */
+    .story{
+        width: 40%;
+    }
+    .btnWrapper{
+        background-color: lightgray;
+        margin: 0;
+        height: 10%;
+    }
+    .btnContainer ul{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnContainer ul li{
+        margin: 0px 10px;
+    }
+    .btnContainer ul li button{
+        border: .5px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+    }
+    .btnContainer ul li button:hover{
+        background-color: darkblue;
+        color: whitesmoke;
+    }
+    /* CSS phần Story */
+    .storyWrapper{
+        margin: 0;
+        height: 90%;
+    }
+    .storyContainer{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .storyContainer .storyVideo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+    }
+    .storyContainer .storyVideo video{
+        border-radius: 10px;
+        /*border: .5px solid dimgray;*/
+        background: rgb(255, 255, 255);
+        background: radial-gradient(circle, #000000b8 0%, rgb(193 193 193 / 13%) 100%);
+    }
+    .storyVideoZoom{
+        width: 100%;
+        height: 100%;
+        /*border-radius: 10px;*/
+    }
+    .storyContainer .btnBackStory, .btnNextStory{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        height: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .storyContainer .btnBackStory:hover, .btnNextStory:hover{
+        background-color: rgba(0, 0, 0, 0.033);
+    }
+    /* -------------------- */
+</style>

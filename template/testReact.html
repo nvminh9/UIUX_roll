@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/icon/roll-favicon-color.png">
+    <!-- Link Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9942475ef.js" crossorigin="anonymous"></script>
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- Link Thư viện Grid system -->
+    <link rel="stylesheet" href="assets/css/library_grid_system.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/test.css">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- ReactJS -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> 
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Roll</title>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script>
+        // React Pratice
+        // 1. Tạo:
+        // <h1 title="hello" class="heading">Hello Guys!</h1>
+        // 2. Tạo:
+        // <ul>
+        //      <li>Javascript</li>
+        //      <li>ReactJS</li>
+        // </ul>
+        // 3. Tạo: 
+        // <div class="post-item">
+        //      <h2 title="Học React tại F8">Học ReactJS</h2>
+        //      <p>Học ReactJS từ cơ bản tới nâng cao</p>
+        // </div>
+    
+        // 1...
+        const bai1 = React.createElement('h1',{
+            title: "hello",
+            className: "heading"
+        }, "Hello Guys!")
+        // 2...
+        const bai2 = React.createElement('ul',null,
+            React.createElement('li',null,"Javascript"),
+            React.createElement('li',null,"ReactJS")
+        )
+        // 3...
+        const bai3 = React.createElement('div',{
+            className: "post-item"
+        }, 
+            React.createElement('h2',{ title: "Học React tại F8" }, "Học ReactJS"),
+            React.createElement('p',null, "Học ReactJS từ cơ bản đến nâng cao")
+        )
+
+        // Lấy DOM của root
+        const root = document.getElementById('root');
+        // React -> DOM 
+        ReactDOM.render(bai3, root)
+    </script>
+</body>
+</html>
