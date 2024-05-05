@@ -586,6 +586,7 @@ body{
     display: grid;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 .rightContainer .storyContainer .listStory .story .storyContent{
     width: 100%;
@@ -595,17 +596,42 @@ body{
     cursor: pointer;
     border-radius: 10px;
     border: .5px solid black;
+    transition: 0.30s;
+            -webkit-transition: 0.30s;
+            -moz-transition: 0.30s;
+            -ms-transition: 0.30s;
+            -o-transition: 0.30s;
 }
 .rightContainer .storyContainer .listStory .story .btnPlayStory{
     background: none;
     border: none;
     width: 180px;
     height: 240px;
+    padding: 0;
     /* cursor: pointer; */
 }  
 .rightContainer .storyContainer .listStory .story button{
 
 }  
+.rightContainer .storyContainer .listStory .story .storyInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #87878750;
+    border-radius: 10px;
+    border: .5px solid black;
+    margin-top: 5px;
+    padding: 3px;
+}
+.rightContainer .storyContainer .listStory .story .storyInfo img{
+    vertical-align: middle;
+    width: 27.5px;
+    height: 27.5px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    float: left;
+}
 /* hết CSS phần Story */
 
 /* ----------- Hết CSS Khung bên phải (rightContainer) --------- */
