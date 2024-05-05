@@ -48,7 +48,9 @@
                     <
                 </button>
                 <div class="col l-10 m-10 c-10 storyVideo">
-                    <video id="storyID" class="story" src="" poster="" autoplay controls loop></video>
+                    <button id="btnStoryVideoID" class="btnStoryVideo">
+                        <video id="storyID" class="story" src="" poster="" autoplay controls loop></video>
+                    </button>
                 </div>
                 <button id="btnNextStoryID" class="col l-1 m-1 c-1 btnNextStory">
                     >
@@ -172,6 +174,13 @@
         if(listStory){
             console.log(listStory)
         }
+
+        // TEST Button Story Video
+        const btnStoryVideo = document.getElementById('btnStoryVideoID')
+        btnStoryVideo.addEventListener('click', function (e){
+            btnStoryVideo.style.background = "red";
+            console.log("Test");
+        });
     </script>
 </body>
 </html>
