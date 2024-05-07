@@ -250,5 +250,15 @@ for(let i=0; i<postImageCtn.length; i++){
 
 
 // --------------------TEST HOVER ON STORY--------------------------
-const storyContent = document.getElementsByClassName('storyContent')
+const storyContent = document.getElementsByClassName('storyContent');
+for(let i=0; i<storyContent.length; i++){
+  storyContent[i].addEventListener('mouseover', function(e){
+    this.play();
+  })
+}
+for(let i=0; i<storyContent.length; i++){
+  storyContent[i].addEventListener('mouseleave', function(e){
+    this.pause();
+  })
+}
 // -----------------------------------------------------------------
