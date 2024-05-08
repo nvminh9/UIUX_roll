@@ -122,6 +122,7 @@ const btnMenu = document.getElementsByClassName('btnMenu');
 const logoImg = document.getElementById('logoImgID');
 const postBack = document.getElementsByClassName('postBack');
 const btnDarkmodeID = document.getElementById('btnDarkmodeid');
+const btnAddfriend = document.getElementsByClassName('btnAddfriend');
 
 const enableDarkMode = () => {
   // 1. thêm class css 
@@ -132,6 +133,9 @@ const enableDarkMode = () => {
   }
   for(let i=0; i<postBack.length; i++){
     postBack[i].style.background = "black";
+  }
+  for(let i=0; i<btnAddfriend.length; i++){
+    btnAddfriend[i].style.color = "whitesmoke";
   }
   btnDarkmodeID.innerHTML = `<i class="fa-solid fa-sun"></i><span>Light Mode</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-white-transparent.png" alt=""></a>`
@@ -148,6 +152,9 @@ const disableDarkMode = () => {
   }
   for(let i=0; i<postBack.length; i++){
     postBack[i].style.background = "#101010";
+  }
+  for(let i=0; i<btnAddfriend.length; i++){
+    btnAddfriend[i].style.color = "black";
   }
   btnDarkmodeID.innerHTML = `<i class="fa-solid fa-moon"></i><span>Dark Mode</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>`
