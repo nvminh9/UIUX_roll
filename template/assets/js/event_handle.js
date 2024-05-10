@@ -269,3 +269,27 @@ for(let i=0; i<storyContent.length; i++){
   })
 }
 // -----------------------------------------------------------------
+// ------------------- Active Story --------------------------------
+// Khi người dùng bấm vào Story thì sẽ hiện lên giao diện để xem story và tính lượt xem cho story đó...
+// là một khung đè lên giao diện hiện tại, chứa danh sách các story sẽ chiếu
+const storyActiveContainer = document.getElementById('storyActiveContainerID');
+// nút bấm vào ở mỗi story
+const btnPlayStory = document.getElementsByClassName('btnPlayStory');
+// mẫu html để chứa danh sách các story
+var storyActiveTemplate = `<div id="storyActiveID" class="storyActive"></div>`;
+
+for(let i=0;i<btnPlayStory.length; i++){
+  btnPlayStory[i].addEventListener('click', function(e){
+    storyActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute;";
+    storyActiveContainer.innerHTML = storyActiveTemplate;
+  });
+};
+
+storyActiveContainer.addEventListener('click', function(e){
+  storyActiveContainer.style = "";
+  storyActiveContainer.innerHTML = "";
+});
+
+
+
+// -----------------------------------------------------------------
