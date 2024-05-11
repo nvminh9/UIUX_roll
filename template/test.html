@@ -635,7 +635,7 @@
             </div>
 
             <!------------------ *** Phần Story Active *** ------------------>
-            <div id="storyActiveContainerID" class="col l-12 m-12 c-12 storyActiveContainer">
+            <div id="storyActiveContainerID" class="col l-12 m-12 c-12 storyActiveContainer" style="height: 100%;width: 100%;padding: 0;position: absolute;">
                 <div id="storyActiveID" class="storyActive">
                     <div class="listStoryActiveContainer">
                         <button class="btnLeftStoryActiveContainer">
@@ -648,7 +648,7 @@
                                     <span class="nameStoryActive">nvmiinh</span>
                                     <button class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button>
                                     <button class="btnMuteStoryActive"><i class="fa-solid fa-volume-high"></i></button>
-                                    <button id="btnCancelStoryActiveID" class="btnCancelStoryActive"><i class="fa-solid fa-xmark"></i></button>
+                                    <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
                                 </div>
                                 <div class="mediaStoryActive">
                                     <video src="assets/media/video/story13.mp4"></video>
