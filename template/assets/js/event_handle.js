@@ -276,7 +276,38 @@ const storyActiveContainer = document.getElementById('storyActiveContainerID');
 // nút bấm vào ở mỗi story
 const btnPlayStory = document.getElementsByClassName('btnPlayStory');
 // mẫu html để chứa danh sách các story
-var storyActiveTemplate = `<div id="storyActiveID" class="storyActive"></div>`;
+var storyActiveTemplate = `<div id="storyActiveID" class="storyActive">
+<div class="listStoryActiveContainer">
+    <button class="btnLeftStoryActiveContainer">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <ul class="listStoryActive">
+        <li class="storyActive_content">
+            <div class="infoStoryActiveContainer">
+                <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="" class="avatarStoryActive">
+                <span class="nameStoryActive">nvmiinh</span>
+                <button class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button>
+                <button class="btnMuteStoryActive"><!-- <i class="fa-solid fa-volume-xmark"></i> --><i class="fa-solid fa-volume-high"></i></button>
+                <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="mediaStoryActive">
+                <video src="assets/media/video/story13.mp4"></video>
+            </div>
+            <div class="interactStoryActive">
+                <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
+            </div>
+        </li>
+        <!-- <li class="storyActive_content">
+
+        </li> -->
+    </ul>
+    <button class="btnRightStoryActiveContainer">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+</div>
+</div>
+
+`;
 
 for(let i=0;i<btnPlayStory.length; i++){
   btnPlayStory[i].addEventListener('click', function(e){
@@ -285,11 +316,15 @@ for(let i=0;i<btnPlayStory.length; i++){
   });
 };
 
-storyActiveContainer.addEventListener('click', function(e){
+//nút CANCEL Story Active
+const btnCancelStoryActive = document.getElementById('btnCancelStoryActiveID');
+
+function cancelStoryActive(){
   storyActiveContainer.style = "";
   storyActiveContainer.innerHTML = "";
-});
+}
 
-
-
+// btnCancelStoryActive.addEventListener('click', () => {
+//   cancelStoryActive();
+// });
 // -----------------------------------------------------------------
