@@ -1,0 +1,19 @@
+Activity Diagram:
+1. Activity Đăng ký
+2. Activity Đăng nhập
+3. Đăng bài
+4. Thích bài
+5. Bình luận bài
+6. Kết bạn
+7. Tìm kiếm
+8. Xem Profile
+9. ....
+
+
+* Fix lại UML: 
+
++ Sửa Use case Diagram (coi lại các use case trong sơ đồ có thực sự là hành động kết thúc hay ch, hành động phải hoàn tất, coi lại các chỗ <<extend>> (là use case cần phải thực hiện xong (hành động phải hoàn tất) rồi mới qa use case extend (có thể hoặc ko)), <<include>> (thì ngược lại extend là phải hoàn tất use case include xong mới đc thực hiện use case có include))...
+
++ Coi và nếu cần thì tinh chỉnh lại luồng trong các bảng đặc tả chức năng, kèm theo sau đó chỉnh lại trong activity lun cho hợp lý.
+
++ Sửa lại Sequence, vẽ thêm các lòng if/else hoặc các lòng khác, cho đúng vs tiêu chuẩn nếu có.
