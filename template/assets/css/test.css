@@ -43,6 +43,7 @@ body{
     background: linear-gradient(0deg, rgb(255 255 255 / 56%) 0%, rgb(255 255 255 / 54%) 100%);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+    z-index: 1;
 }
 .headerContainer .btnExpandMenuContainer{
     padding: 0;
@@ -457,6 +458,12 @@ body{
     margin: 0 auto;
     height: 350px;
     scroll-snap-align: start;
+}
+.postContainer .postContent .postImages .postImageContainer video{
+    height: 100%;
+    border: 0.2px solid dimgrey;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 .postContainer .postContent .postImages .postImageContainer img{
     height: 100%;
