@@ -311,7 +311,7 @@ var storyActiveTemplate = `<div id="storyActiveID" class="storyActive">
 
 for(let i=0;i<btnPlayStory.length; i++){
   btnPlayStory[i].addEventListener('click', function(e){
-    storyActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute;";
+    storyActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute; z-index: 1;";
     storyActiveContainer.innerHTML = storyActiveTemplate;
   });
 };
