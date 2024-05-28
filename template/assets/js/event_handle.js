@@ -328,3 +328,29 @@ function cancelStoryActive(){
 //   cancelStoryActive();
 // });
 // -----------------------------------------------------------------
+
+// ------------------------- Active Image --------------------------
+// list các hình của tất cả các bài viết
+const postImage = document.getElementsByClassName('postImage');
+// khung imageActiveContainer
+const imageActiveContainer = document.getElementById('imageActiveContainerID');
+// template imageActive 
+var imageActive = '';
+
+for(let i=0; i<postImage.length; i++){
+  postImage[i].addEventListener('click', function(e){
+
+    imageActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute; z-index: 1;";
+    imageActive = `<div id="imageActiveID" class="imageActive">
+    <img src="`+postImage[i].src+`" alt="">
+</div>`
+    imageActiveContainer.innerHTML = imageActive;
+
+    document.getElementById('imageActiveID').addEventListener('click', function(e){
+      imageActiveContainer.style = "";
+      imageActiveContainer.innerHTML = "";
+    });
+    
+  })
+}
+// -----------------------------------------------------------------

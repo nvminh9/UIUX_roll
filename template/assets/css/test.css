@@ -776,7 +776,8 @@ body{
     /* height: 100%;
     width: 100%;
     padding: 0;
-    position: absolute; */
+    position: absolute; 
+    z-index: 1; */
 }
 .storyActiveContainer .storyActive{
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
@@ -970,3 +971,26 @@ body{
 }
 /* hết phần tương tác */
 /* ----------------------- Hết CSS Story Active Container ------------------------------------- */
+
+/* ------------------- CSS Image Active Container ----------------------- */
+.imageActiveContainer{
+    /* height: 100%;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    z-index: 1; */
+}
+.imageActiveContainer .imageActive{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imageActiveContainer .imageActive img{
+    height: 100%;
+}
+/* ---------------------------------------------------------------------- */
