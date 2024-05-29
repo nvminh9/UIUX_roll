@@ -981,16 +981,91 @@ body{
     z-index: 1; */
 }
 .imageActiveContainer .imageActive{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
     -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); */
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
-.imageActiveContainer .imageActive img{
+.imageActiveContainer .imageActive .imageActiveContent{
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* .imageActiveContainer .imageActive .imageActiveContent img{
+    height: 100%;
+    width: 100%;
+} */
+.imageActiveContainer .imageActive .btnLeftImageActive, .btnRightImageActive{
+    height: 100%;
+    border: none;
+    font-size: 35px;
+    background: rgba(105, 105, 105, 0.444);
+    cursor: pointer;
+}
+.imageActiveContainer .imageActive .btnLeftImageActive i, .btnRightImageActive i{
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.imageActiveContainer .imageActive .btnLeftImageActive:hover i{
+    transform: translateX(-5px);
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.imageActiveContainer .imageActive .btnRightImageActive:hover i{
+    transform: translateX(5px);
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+/* ---------------------------------------------------------------------- */
+
+/* ------------------------- Media Query -------------------------------- */
+/***** Thiết bị có kích thước chiều rộng màn hình 320px - 739px (màn hình điện thoại) *****/
+@media (min-width: 320px) and (max-width: 739px) {
+    .imageActiveContentSize{
+        width: 100%;
+    }
+}
+/***** Thiết bị có kích thước chiều rộng màn hình 740px - 1023px (màn hình tablet và laptop nhỏ) *****/
+@media (min-width: 740px) and (max-width: 1023px) {
+    .imageActiveContentSize{
+        width: 100%;
+    }
+}
+/***** Thiết bị có kích thước chiều rộng màn hình 1024px - 1239px (màn của PC or Laptop) *****/
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .imageActiveContentSize{
+        /* width: 100%; */
+        height: 100%;
+    }
+}
+/***** Thiết bị có kích thước chiều rộng màn hình >= 740px (màn từ Tablet trở lên) *****/
+@media (min-width: 740px) {
+    .imageActiveContentSize{
+        /* width: 100%; */
+        height: 100%;
+    }
+}
+/***** Thiết bị có kích thước chiều rộng màn hình >= 1113px (PC or Laptop có màn lớn) *****/
+@media (min-width: 1113px){
+    .imageActiveContentSize{
+        /* width: 100%; */
+        height: 100%;
+    }
 }
 /* ---------------------------------------------------------------------- */

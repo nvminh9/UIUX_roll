@@ -340,13 +340,21 @@ var imageActive = '';
 for(let i=0; i<postImage.length; i++){
   postImage[i].addEventListener('click', function(e){
 
-    imageActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute; z-index: 1;";
+    imageActiveContainer.style = `height: 100%;width: 100%;padding: 0;position: absolute;z-index:1;background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(8px);`;
     imageActive = `<div id="imageActiveID" class="imageActive">
-    <img src="`+postImage[i].src+`" alt="">
-</div>`
+        <button class="col l-1 m-2 c-2 btnLeftImageActive">
+        <i class="fa-solid fa-circle-chevron-left"></i>
+        </button>
+        <div id="imageActiveContentID" class="col l-10 m-8 c-8 imageActiveContent">
+            <img class="imageActiveContentSize" src="`+postImage[i].src+`" alt="">
+        </div>
+        <button class="col l-1 m-2 c-2 btnRightImageActive">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+        </button>
+    </div>`
     imageActiveContainer.innerHTML = imageActive;
 
-    document.getElementById('imageActiveID').addEventListener('click', function(e){
+    document.getElementById('imageActiveContentID').addEventListener('click', function(e){
       imageActiveContainer.style = "";
       imageActiveContainer.innerHTML = "";
     });
