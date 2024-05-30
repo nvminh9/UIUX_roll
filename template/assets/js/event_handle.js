@@ -273,52 +273,87 @@ for(let i=0; i<storyContent.length; i++){
 // Khi người dùng bấm vào Story thì sẽ hiện lên giao diện để xem story và tính lượt xem cho story đó...
 // là một khung đè lên giao diện hiện tại, chứa danh sách các story sẽ chiếu
 const storyActiveContainer = document.getElementById('storyActiveContainerID');
+// list các video story đã load được...
+var listStoryContent = document.getElementsByClassName('storyContent');
+// list info của người đăng story đã load được...
+var listStoryInfo = document.getElementsByClassName('storyInfo');
 // nút bấm vào ở mỗi story
 const btnPlayStory = document.getElementsByClassName('btnPlayStory');
 // mẫu html để chứa danh sách các story
-var storyActiveTemplate = `<div id="storyActiveID" class="storyActive">
-<div class="listStoryActiveContainer">
-    <button class="btnLeftStoryActiveContainer">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <ul class="listStoryActive">
-        <li class="storyActive_content">
-            <div class="infoStoryActiveContainer">
-                <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="" class="avatarStoryActive">
-                <span class="nameStoryActive">nvmiinh</span>
-                <button class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button>
-                <button class="btnMuteStoryActive"><!-- <i class="fa-solid fa-volume-xmark"></i> --><i class="fa-solid fa-volume-high"></i></button>
-                <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="mediaStoryActive">
-                <video src="assets/media/video/story13.mp4"></video>
-            </div>
-            <div class="interactStoryActive">
-                <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
-            </div>
-        </li>
-        <!-- <li class="storyActive_content">
-
-        </li> -->
-    </ul>
-    <button class="btnRightStoryActiveContainer">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-</div>
-</div>
-
-`;
+var storyActiveTemplate = '';
 
 for(let i=0;i<btnPlayStory.length; i++){
   btnPlayStory[i].addEventListener('click', function(e){
+    // index của video story;
+    let indexStoryActive = i;
+    console.log(indexStoryActive);
     storyActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute; z-index: 1;";
+    storyActiveTemplate = `<div id="storyActiveID" class="storyActive">
+    <div class="listStoryActiveContainer">
+        <button id="btnLeftStoryActiveID" class="btnLeftStoryActiveContainer">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <ul class="listStoryActive">
+            <li class="storyActive_content">
+                <div class="infoStoryActiveContainer">
+                    <img id="avatarStoryActiveID" src="`+listStoryInfo[indexStoryActive].children[0].src+`" alt="" class="avatarStoryActive">
+                    <span id="nameStoryActiveID" class="nameStoryActive">`+listStoryInfo[indexStoryActive].children[1].textContent+`</span>
+                    <!-- <button id="" class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button> -->
+                    <button id="btnMuteStoryActiveID" class="btnMuteStoryActive"><!-- <i class="fa-solid fa-volume-xmark"></i> --><i class="fa-solid fa-volume-high"></i></button>
+                    <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="mediaStoryActive">
+                    <video id="videoStoryActiveID" src="`+listStoryContent[indexStoryActive].src+`" autoplay loop></video>
+                </div>
+                <div class="interactStoryActive">
+                    <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
+                </div>
+            </li>
+            <!-- <li class="storyActive_content">
+    
+            </li> -->
+        </ul>
+        <button id="btnRightStoryActiveID" class="btnRightStoryActiveContainer">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+    </div>`
     storyActiveContainer.innerHTML = storyActiveTemplate;
+    // khung tên, avatar, video của story
+    var nameStoryActive = document.getElementById('nameStoryActiveID');
+    var avatarStoryActive = document.getElementById('avatarStoryActiveID');
+    var videoStoryActive = document.getElementById('videoStoryActiveID');
+    // nút lùi về story trước
+    document.getElementById('btnLeftStoryActiveID').addEventListener('click', function(e){
+      if(indexStoryActive != 0){
+        indexStoryActive = indexStoryActive - 1;
+      }else{
+        indexStoryActive = indexStoryActive;
+      }
+      nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
+      avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
+      videoStoryActive.src = listStoryContent[indexStoryActive].src;
+    });
+    // nút tiến tới story tiếp theo 
+    document.getElementById('btnRightStoryActiveID').addEventListener('click', function(e){
+      if(indexStoryActive <= btnPlayStory.length){
+        indexStoryActive = indexStoryActive + 1;
+      }else{
+        indexStoryActive = indexStoryActive;
+      }
+      nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
+      avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
+      videoStoryActive.src = listStoryContent[indexStoryActive].src;
+    });
+    // nút tắt âm lượng của story
+    document.getElementById('btnMuteStoryActiveID').addEventListener('click', function(e){
+      
+    })
   });
 };
 
 //nút CANCEL Story Active
 const btnCancelStoryActive = document.getElementById('btnCancelStoryActiveID');
-
 function cancelStoryActive(){
   storyActiveContainer.style = "";
   storyActiveContainer.innerHTML = "";
