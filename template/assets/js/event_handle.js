@@ -331,7 +331,7 @@ function cancelStoryActive(){
 
 // ------------------------- Active Image --------------------------
 // list các hình của tất cả các bài viết
-const postImage = document.getElementsByClassName('postImage');
+var postImage = document.getElementsByClassName('postImage');
 // khung imageActiveContainer
 const imageActiveContainer = document.getElementById('imageActiveContainerID');
 // template imageActive 
@@ -339,26 +339,41 @@ var imageActive = '';
 
 for(let i=0; i<postImage.length; i++){
   postImage[i].addEventListener('click', function(e){
-
+    // imageActiveSrc lưu index hiện tại của hình khi được chọn.
+    let imageActiveSrc = i;
     imageActiveContainer.style = `height: 100%;width: 100%;padding: 0;position: absolute;z-index:1;background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(8px);`;
     imageActive = `<div id="imageActiveID" class="imageActive">
-        <button class="col l-1 m-2 c-2 btnLeftImageActive">
+        <button id="btnLeftImageActiveID" class="col l-1 m-2 c-2 btnLeftImageActive">
         <i class="fa-solid fa-circle-chevron-left"></i>
         </button>
         <div id="imageActiveContentID" class="col l-10 m-8 c-8 imageActiveContent">
-            <img class="imageActiveContentSize" src="`+postImage[i].src+`" alt="">
+            <img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">
         </div>
-        <button class="col l-1 m-2 c-2 btnRightImageActive">
+        <button id="btnRightImageActiveID" class="col l-1 m-2 c-2 btnRightImageActive">
             <i class="fa-solid fa-circle-chevron-right"></i>
         </button>
     </div>`
     imageActiveContainer.innerHTML = imageActive;
-
-    document.getElementById('imageActiveContentID').addEventListener('click', function(e){
+    // khung chứa hình
+    var imageActiveContent = document.getElementById('imageActiveContentID');
+    imageActiveContent.addEventListener('click', function(e){
       imageActiveContainer.style = "";
       imageActiveContainer.innerHTML = "";
     });
-    
+    // nút lùi về hình bên trái
+    document.getElementById('btnLeftImageActiveID').addEventListener('click',function(e){
+      // console.log('index trước đó: ', imageActiveSrc);
+      // sau khi nhấn nút lùi cập nhật index (imageActiveSrc) giảm đi 1, và show hình với index đó
+      imageActiveSrc = imageActiveSrc - 1;
+      imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+    });
+    // nút tiến tới hình bên phải
+    document.getElementById('btnRightImageActiveID').addEventListener('click',function(e){
+      // console.log('index trước đó: ', imageActiveSrc);
+      // sau khi nhấn nút tăng cập nhật index (imageActiveSrc) tăng lên 1, và show hình với index đó
+      imageActiveSrc = imageActiveSrc + 1;
+      imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+    });
   })
 }
 // -----------------------------------------------------------------
