@@ -269,7 +269,7 @@ for(let i=0; i<storyContent.length; i++){
   })
 }
 // -----------------------------------------------------------------
-// ------------------- Active Story --------------------------------
+// -------------------*** ACTIVE STORY ***--------------------------------
 // Khi người dùng bấm vào Story thì sẽ hiện lên giao diện để xem story và tính lượt xem cho story đó...
 // là một khung đè lên giao diện hiện tại, chứa danh sách các story sẽ chiếu
 const storyActiveContainer = document.getElementById('storyActiveContainerID');
@@ -327,23 +327,25 @@ for(let i=0;i<btnPlayStory.length; i++){
     document.getElementById('btnLeftStoryActiveID').addEventListener('click', function(e){
       if(indexStoryActive != 0){
         indexStoryActive = indexStoryActive - 1;
+        nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
+        avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
+        videoStoryActive.src = listStoryContent[indexStoryActive].src;
       }else{
         indexStoryActive = indexStoryActive;
+        // alert("Hết rồi :v");
       }
-      nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
-      avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
-      videoStoryActive.src = listStoryContent[indexStoryActive].src;
     });
     // nút tiến tới story tiếp theo 
     document.getElementById('btnRightStoryActiveID').addEventListener('click', function(e){
-      if(indexStoryActive <= btnPlayStory.length){
+      if(indexStoryActive < (btnPlayStory.length - 1)){
         indexStoryActive = indexStoryActive + 1;
+        nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
+        avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
+        videoStoryActive.src = listStoryContent[indexStoryActive].src;
       }else{
         indexStoryActive = indexStoryActive;
+        // alert("Hết rồi :v");
       }
-      nameStoryActive.textContent = listStoryInfo[indexStoryActive].children[1].textContent;
-      avatarStoryActive.src = listStoryInfo[indexStoryActive].children[0].src;
-      videoStoryActive.src = listStoryContent[indexStoryActive].src;
     });
     // nút tắt âm lượng của story
     document.getElementById('btnMuteStoryActiveID').addEventListener('click', function(e){
@@ -364,7 +366,7 @@ function cancelStoryActive(){
 // });
 // -----------------------------------------------------------------
 
-// ------------------------- Active Image --------------------------
+// -------------------------*** ACTIVE IMAGE ***--------------------------
 // list các hình của tất cả các bài viết
 var postImage = document.getElementsByClassName('postImage');
 // khung imageActiveContainer
@@ -399,15 +401,25 @@ for(let i=0; i<postImage.length; i++){
     document.getElementById('btnLeftImageActiveID').addEventListener('click',function(e){
       // console.log('index trước đó: ', imageActiveSrc);
       // sau khi nhấn nút lùi cập nhật index (imageActiveSrc) giảm đi 1, và show hình với index đó
-      imageActiveSrc = imageActiveSrc - 1;
-      imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+      if(imageActiveSrc != 0){
+        imageActiveSrc = imageActiveSrc - 1;
+        imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+      }else{
+        imageActiveSrc = imageActiveSrc;
+        // alert("Hết rồi :v");
+      }
     });
     // nút tiến tới hình bên phải
     document.getElementById('btnRightImageActiveID').addEventListener('click',function(e){
       // console.log('index trước đó: ', imageActiveSrc);
       // sau khi nhấn nút tăng cập nhật index (imageActiveSrc) tăng lên 1, và show hình với index đó
-      imageActiveSrc = imageActiveSrc + 1;
-      imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+      if(imageActiveSrc < (postImage.length - 1)){
+        imageActiveSrc = imageActiveSrc + 1;
+        imageActiveContent.innerHTML = `<img class="imageActiveContentSize" src="`+postImage[imageActiveSrc].src+`" alt="">`
+      }else{
+        imageActiveSrc = imageActiveSrc;
+        // alert("Hết rồi :v");
+      }      
     });
   })
 }
