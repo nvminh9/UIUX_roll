@@ -351,7 +351,7 @@ body{
 /* Post Header */
 .postContainer .postHeader{
     /* height: 15%; */
-    background-color: #101010;
+    background-color: black;
     border-radius: 10px 10px 0px 0px;
     display: flex;
     padding: 15px;
@@ -424,14 +424,19 @@ body{
 /* Post Content */
 .postContainer .postContent{
     /* height: 75%; */
-    background-color: #101010;
-    padding: 0px 15px 0px 15px;
+    background-color: black;
+    /* padding: 0px 15px 0px 15px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* phần caption của bài đăng (postCaption) */
-.postContainer .postContent .postCaption{
-    padding: 0px 10px 10px 5px;
+.postContainer .postCaption{
+    padding: 0px 10px 10px 25px;
+    background: black;
 }
-.postContainer .postContent .postCaption span{
+.postContainer .postCaption span{
     color: whitesmoke;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
@@ -446,6 +451,8 @@ body{
     scroll-snap-type: x;
     scroll-behavior: smooth;
     scrollbar-width: none; /* for firefox */
+    position: relative;
+    /* z-index: 4; */
 }
 .postContainer .postContent .postImages:hover{
     cursor: grab;
@@ -471,11 +478,60 @@ body{
     border-radius: 10px;
     margin: 0 auto;
 }
+/* phần nút di chuyển slide hình */
+.postContainer .postContent .btnLeftPostImagesContainer, .btnRightPostImagesContainer{
+    padding: 3px;
+}
+.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages, .btnRightPostImagesContainer .btnRightPostImages{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages:hover, .btnRightPostImagesContainer .btnRightPostImages:hover{
+    background-color: rgba(255, 255, 255, 0.74);
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages i, .btnRightPostImagesContainer .btnRightPostImages i{
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages:hover i{
+    transform: translateX(-2px);
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
+.postContainer .postContent .btnRightPostImagesContainer .btnRightPostImages:hover i{
+    transform: translateX(2px);
+    transition: 0.20s;
+            -webkit-transition: 0.20s;
+            -moz-transition: 0.20s;
+            -ms-transition: 0.20s;
+            -o-transition: 0.20s;
+}
 /* ... */
 /* Post Interact */
 .postContainer .postInteract{
     /* height: 10%; */
-    background-color: #101010;
+    background-color: black;
     border-radius: 0px 0px 10px 10px;
 }
 /* Phần tim/xem bình luận/chia sẻ/  (postReact) */
