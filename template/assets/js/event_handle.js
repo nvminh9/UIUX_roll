@@ -432,13 +432,13 @@ const postImages = document.getElementsByClassName('postImages');
 const btnLeftPostImages = document.getElementsByClassName('btnLeftPostImages');
 // nút di chuyển slide hình qua phải
 const btnRightPostImages = document.getElementsByClassName('btnRightPostImages');
-
-for(let i=0; i<postImages.length; i++){
+// 
+for(let i=0; i<=postImages.length; i++){
   btnLeftPostImages[i].addEventListener('click', function(e){
-    alert("Nút Left của slide thứ " + i);
+    postImages[i].scrollLeft = postImages[i].scrollLeft - 350;
   });
   btnRightPostImages[i].addEventListener('click', function(e){
-    alert("Nút Right của slide thứ " + i);
+    postImages[i].scrollLeft = postImages[i].scrollLeft + 350;
   });
 }
 // ------------------------------------------------------------------------------
