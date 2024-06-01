@@ -451,11 +451,13 @@ middleCtn.onscroll = function() {
     document.getElementById("headerContainerID").style.top = "0";
     document.getElementById("leftContainerID").style.top = "0";
     document.getElementById("rightContainerID").style.top = "0";
+    window.scrollTo(0,0);
     prevScrollpos = currentScrollPos;
   } else if (currentScrollPos > prevScrollpos + 60){
     document.getElementById("headerContainerID").style.top = "-70px";
     document.getElementById("leftContainerID").style.top = "-70px";
     document.getElementById("rightContainerID").style.top = "-60px";
+    window.scrollTo(0,1);
     prevScrollpos = currentScrollPos;
   }
 }
