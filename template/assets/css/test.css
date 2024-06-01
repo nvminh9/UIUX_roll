@@ -511,7 +511,7 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
 }
-.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages:hover i{
+.postContainer .postContent .btnLeftPostImagesContainer .btnLeftPostImages:active i{
     transform: translateX(-2px);
     transition: 0.20s;
             -webkit-transition: 0.20s;
@@ -519,7 +519,7 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
 }
-.postContainer .postContent .btnRightPostImagesContainer .btnRightPostImages:hover i{
+.postContainer .postContent .btnRightPostImagesContainer .btnRightPostImages:active i{
     transform: translateX(2px);
     transition: 0.20s;
             -webkit-transition: 0.20s;

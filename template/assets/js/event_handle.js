@@ -433,7 +433,7 @@ const btnLeftPostImages = document.getElementsByClassName('btnLeftPostImages');
 // nút di chuyển slide hình qua phải
 const btnRightPostImages = document.getElementsByClassName('btnRightPostImages');
 // 
-for(let i=0; i<=postImages.length; i++){
+for(let i=0; i<postImages.length; i++){
   btnLeftPostImages[i].addEventListener('click', function(e){
     postImages[i].scrollLeft = postImages[i].scrollLeft - 350;
   });
@@ -441,4 +441,17 @@ for(let i=0; i<=postImages.length; i++){
     postImages[i].scrollLeft = postImages[i].scrollLeft + 350;
   });
 }
+// ------------------------------------------------------------------------------
+
+
+// ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL ***------------------
+//For iPhone and Andriod To remove Address bar when viewing website on Safari Mobile
+// When ready...
+window.addEventListener("load",function() {
+  // Set a timeout...
+  setTimeout(function(){
+  // Hide the address bar!
+  window.scrollTo(0, 1);
+  }, 0);
+});
 // ------------------------------------------------------------------------------
