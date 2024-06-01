@@ -44,6 +44,11 @@ body{
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     z-index: 1;
+    transition: 0.20s;
+        -webkit-transition: 0.20s;
+        -moz-transition: 0.20s;
+        -ms-transition: 0.20s;
+        -o-transition: 0.20s;
 }
 .headerContainer .btnExpandMenuContainer{
     padding: 0;
@@ -131,6 +136,7 @@ body{
     -moz-transition: 0.30s;
     -ms-transition: 0.30s;
     -o-transition: 0.30s;
+    position: relative;
 }
 /* logoZone */
 .leftContainer .logoZone{
@@ -603,7 +609,12 @@ body{
 /* ----------- Phần CSS Khung bên phải (rightContainer) --------- */
 
 .rightContainer{
-
+    position: relative;
+    transition: 0.30s;
+            -webkit-transition: 0.30s;
+            -moz-transition: 0.30s;
+            -ms-transition: 0.30s;
+            -o-transition: 0.30s;
 }
 /* CSS phần Story */
 .rightContainer .storyContainer{

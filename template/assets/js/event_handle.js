@@ -151,7 +151,7 @@ const disableDarkMode = () => {
     btnMenu[i].classList.remove('btnMenuDarkMode');
   }
   for(let i=0; i<postBack.length; i++){
-    postBack[i].style.background = "#101010";
+    postBack[i].style.background = "black";
   }
   for(let i=0; i<btnAddfriend.length; i++){
     btnAddfriend[i].style.color = "black";
@@ -443,6 +443,23 @@ for(let i=0; i<postImages.length; i++){
 }
 // ------------------------------------------------------------------------------
 
+// ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL ***------------------
+var prevScrollpos = middleCtn.scrollTop;
+middleCtn.onscroll = function() {
+  var currentScrollPos = middleCtn.scrollTop;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("headerContainerID").style.top = "0";
+    document.getElementById("leftContainerID").style.top = "0";
+    document.getElementById("rightContainerID").style.top = "0";
+    prevScrollpos = currentScrollPos;
+  } else if (currentScrollPos > prevScrollpos + 60){
+    document.getElementById("headerContainerID").style.top = "-70px";
+    document.getElementById("leftContainerID").style.top = "-70px";
+    document.getElementById("rightContainerID").style.top = "-60px";
+    prevScrollpos = currentScrollPos;
+  }
+}
+// ------------------------------------------------------------------------------
 
 // ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL ***------------------
 //For iPhone and Andriod To remove Address bar when viewing website on Safari Mobile
