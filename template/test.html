@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+    <!-- Meta tag for web app to hide search bar on browser Safari -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;"> -->
     <!-- Link for hide search bar on browser -->
     <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
     <!-- Link Favicon -->
@@ -25,6 +29,11 @@
     <title>Roll</title>
 </head>
 <body>
+    <!-- script hide search bar -->
+    <script>
+        window.scrollTo(0, 0) ;
+    </script>        
+    <!-- ---------------------- -->
     <div id="wrapperID" class="grid wide wrapper">
         <div id="headerContainerID" class="row headerContainer">
             <div class="col l-0 m-1 c-1 btnExpandMenuContainer">
@@ -1075,6 +1084,12 @@
         </div>
     </div>
 
+    <!-- script hide search bar -->
+    <script>
+        var scroll = window.setInterval(function() { window.scrollTo(0,
+        1) ; }, 2000) ;
+    </script>
+    <!-- ---------------------- -->
     <!-- Link Javascript -->
     <script src="assets/js/event_handle.js"></script>
 </body>
