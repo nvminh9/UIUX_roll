@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tag for web app to hide search bar on browser Safari -->
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+    <!-- Link Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/icon/roll-favicon-color.png">
+    <!-- Link Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9942475ef.js" crossorigin="anonymous"></script>
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- Link Thư viện Grid system -->
+    <link rel="stylesheet" href="assets/css/library_grid_system.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/test.css">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- ReactJS -->
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+    <title>Roll</title>
+</head>
+<body>
+    <!-- script hide search bar -->
+    <script>
+        window.scrollTo(0, 0) ;
+    </script>        
+    <!-- ---------------------- -->
+    <div id="wrapperID" class="grid wide wrapper">
+        <div id="headerContainerID" class="row headerContainer">
+            <div class="col l-0 m-1 c-1 btnExpandMenuContainer">
+                <button id="btnExpandMenuID" class="btnExpandMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id="logoImgID" class="col l-2 m-2 c-2 logoImg">
+                <a href="test.html"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>
+            </div>
+            <div class="col l-7 m-9 c-9 headerContainerMiddle">
+                <ul>
+                    <li >
+                        <button id="btnFeeds" onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </li>
+                    <li >
+                        <button id="btnRoll">
+                            <span>Profile</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col l-3 m-0 c-0 headerContainerRight">
+
+            </div>
+        </div>
+        <div class="row container">
+            <!-- Phần khung bên trái -->
+            <div id="leftContainerID" class="col l-2 m-0 c-0 leftContainer">
+                <!-- Vùng chứa logo -->
+                <div id="logoZoneID" class="row logoZone">
+                    <div class="col l-12 m-12 c-12 logoImg">
+                        <!-- <a href="#"><img src="assets/img/thefamlogo1.jpg" alt=""></a>  -->
+                    </div>
+                </div>
+                <!-- Vùng chứa menu -->
+                <div class="row menuZone">
+                    <div class="col l-12 m-12 c-12 CtnbtnProfile">
+                        <button id="btnProfileid" class="btnMenu btnProfile">
+                            <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt=""><span>nvmiinh</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnNewsFeed">
+                        <button id="btnNewsFeedid" class="btnMenu btnNewsFeed">
+                            <i class="fa-solid fa-house"></i><span>News Feed</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnNoti">
+                        <button id="btnNotiid" class="btnMenu btnNoti">
+                            <i class="fa-solid fa-bell"></i><span class="notiTxt">Notification</span><span class="numberNoti">3</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnSearch">
+                        <button id="btnSearchid" class="btnMenu btnSearch">
+                            <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnMessages">
+                        <button id="btnMessagesid" class="btnMenu btnMessages">
+                            <i class="fa-solid fa-message"></i><span>Messages</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnSettings">
+                        <button id="btnSettingsid" class="btnMenu btnSettings">
+                            <i class="fa-solid fa-gear"></i><span>Settings</span>
+                        </button>
+                    </div>
+                    <div class="col l-12 m-12 c-12 CtnbtnDarkMode">
+                        <button id="btnDarkmodeid" class="btnMenu btnDarkmode">
+                            <i class="fa-solid fa-moon"></i><span>Dark Mode</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Vùng chứa music player -->
+                <div class="row musicPlayerZone">
+                    <div class="col l-12 m-12 c-12 CtnmusicPlayer">
+                        <div class="musicPLayerTop">
+                            <div class="col l-5 m-5 c-5 musicPlayerTopSongImg">
+                                <img src="https://images.genius.com/8e2c3c0e076e066fa40966001b956663.1000x1000x1.jpg" alt="">
+                            </div>
+                            <div class="col l-7 m-7 c-7 musicPlayerTopInfo">
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopSettings">
+                                        <button><i class="fa-solid fa-list-check"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopSongName">
+                                        <span>Venom</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12 musicPlayerTopFeature">
+                                        <div class="row">
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-caret-left"></i></button></div>
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-pause"></i></button></div>
+                                            <div class="col l-4 m-4 c-4"><button><i class="fa-solid fa-caret-right"></i></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="musicPLayerBottom">
+                            <div class="col l-12 m-12 c-12 musicPlayerBottomTimeLine">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Phần khung bên ở giữa -->
+            <div id="middleContainerID" class="col l-7 m-12 c-12 middleContainer">
+                <!-- Phần thừa để đẩy bài đầu xuống ko bị che -->
+                <div id="headerBackID" class="row headerBack"></div>
+                Profile
+            </div>
+            <!-- Phần khung bên phải -->
+            <div id="rightContainerID" class="col l-3 m-0 c-0 rightContainer">
+                <!-- Phần thừa để đẩy bài đầu xuống ko bị che -->
+                <div class="row headerBack"></div>
+                <div class="col l-12 m-12 c-12 storyContainer">
+                    <div class="storyContainerTitle">
+                        <div class="storyContainerIcon"><img src="" alt=""><i class="fa-solid fa-star-of-life"></i></div><span>Stories</span>
+                    </div>
+                    <div class="listStoryContainer">
+                        <ul class="listStory">
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story11.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story12.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png" alt="">
+                                    <span class="storyInfoUserName">chelsea</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story13.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="assets/img/thefamlogo1.jpg" alt="">
+                                    <span class="storyInfoUserName">thefam</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story4.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story14.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story6.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story7.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story8.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story9.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                            <li class="story ">
+                                <button class="btnPlayStory">
+                                    <video class="storyContent " src="assets/media/video/story10.mp4" loop></video>
+                                </button>
+                                <div class="storyInfo">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="">
+                                    <span class="storyInfoUserName">nvmiinh</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col l-12 m-12 c-12 suggestContainer">
+                    <div class="suggestContainerTitle">
+                        <div class="suggestContainerIcon"><img src="" alt=""></div><span>Suggestions</span>
+                    </div>
+                    <div class="listSuggestContainer">
+                        <ul class="listSuggest">
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://www.svgrepo.com/show/382102/male-avatar-boy-face-man-user-8.svg" alt="">
+                                <span class="suggestName">michael</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="">
+                                <span class="suggestName">jackson</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg" alt="">
+                                <span class="suggestName">grande</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://cdn-icons-png.freepik.com/512/147/147142.png" alt="">
+                                <span class="suggestName">john wick</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_boy_person_people_avatar_icon_159358.png" alt="">
+                                <span class="suggestName">lewis</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                            <li class="suggest">
+                                <img class="suggestAvatar" src="https://www.shareicon.net/data/512x512/2016/05/26/771188_man_512x512.png" alt="">
+                                <span class="suggestName">Linus</span>
+                                <button class="btnAddfriend">Add friend</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------ *** Phần Story Active *** ------------------>
+            <!-- style="height: 100%;width: 100%;padding: 0;position: absolute;z-index:1;" -->
+            <div id="storyActiveContainerID" class="col l-12 m-12 c-12 storyActiveContainer" >
+                <!-- <div id="storyActiveID" class="storyActive">
+                    <div class="listStoryActiveContainer">
+                        <button class="btnLeftStoryActiveContainer">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <ul class="listStoryActive">
+                            <li class="storyActive_content">
+                                <div class="infoStoryActiveContainer">
+                                    <img src="https://i.pinimg.com/564x/2a/fa/7f/2afa7f0934a2c2f1c7132b0b179dba49.jpg" alt="" class="avatarStoryActive">
+                                    <span class="nameStoryActive">nvmiinh</span>
+                                    <button class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button>
+                                    <button class="btnMuteStoryActive"><i class="fa-solid fa-volume-high"></i></button>
+                                    <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <div class="mediaStoryActive">
+                                    <video src="assets/media/video/story13.mp4"></video>
+                                </div>
+                                <div class="interactStoryActive">
+                                    <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btnRightStoryActiveContainer">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+            <!--------------------------------------------------------------->
+            <!------------------ *** Phần Image Active *** ------------------>
+            <!-- style="height: 100%;width: 100%;padding: 0;position: absolute;z-index:1;background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(8px);" -->
+            <div id="imageActiveContainerID" class="col l-12 m-12 c-12 imageActiveContainer">
+                <!-- <div id="imageActiveID" class="row imageActive">
+                    <button class="col l-1 m-2 c-2 btnLeftImageActive">
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    </button>
+                    <div class="col l-10 m-8 c-8 imageActiveContent">
+                        <img class="imageActiveContentSize" src="https://ktvz.b-cdn.net/2024/03/cnn-L19jb21wb25lbnRzL2ltYWdlL2luc3RhbmNlcy9jbHR5OTJ6bnEwMDA2MzU2aHpyd2Z4OHNt-L19jb21wb25lbnRzL2FydGljbGUvaW5zdGFuY2VzL2NsdHk5MmxlcDAwMWQ5bnA2Zm8zc2Qyajk-scaled.jpg" alt="">
+                    </div>
+                    <button class="col l-1 m-2 c-2 btnRightImageActive">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+                </div> -->
+            </div>
+            <!--------------------------------------------------------------->
+        </div>
+    </div>
+
+    <!-- script hide search bar -->
+    <script>
+        var scroll = window.setInterval(function() { window.scrollTo(0,
+        1) ; }, 2000) ;
+    </script>
+    <!-- ---------------------- -->
+    <!-- Link Javascript -->
+    <script src="assets/js/event_handle.js"></script>
+</body>
+</html>

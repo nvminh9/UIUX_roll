@@ -40,15 +40,17 @@
                 </button>
             </div>
             <div id="logoImgID" class="col l-2 m-2 c-2 logoImg">
-                <a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>
+                <a href="test.html"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>
             </div>
             <div class="col l-7 m-9 c-9 headerContainerMiddle">
                 <ul>
-                    <li style="border-right: 1px solid black;">
-                        <button id="btnFeeds">Feeds</button>
+                    <li>
+                        <button id="btnFeeds" onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
                     </li>
-                    <li style="border-left: 1px solid black;">
-                        <button id="btnRoll">Roll</button>
+                    <li>
+                        <button id="btnRollBack"><span>Feeds</span></button>
                     </li>
                 </ul>
             </div>

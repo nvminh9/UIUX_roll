@@ -9,13 +9,13 @@
 
 // Header button
 let btnFeeds = document.getElementById('btnFeeds')
-let btnRoll = document.getElementById('btnRoll')
-// Left Container's Button
-let btnNewsFeed = document.getElementById('btnNewsFeedid')
-let btnNoti = document.getElementById('btnNotiid')
-let btnSearch = document.getElementById('btnSearchid')
-let btnMessages = document.getElementById('btnMessagesid')
-let btnSettings = document.getElementById('btnSettingsid')
+let btnRollBack = document.getElementById('btnRollBack')
+// // Left Container's Button
+// const btnNewsFeed = document.getElementById('btnNewsFeedid')
+// const btnNoti = document.getElementById('btnNotiid')
+// const btnSearch = document.getElementById('btnSearchid')
+// const btnMessages = document.getElementById('btnMessagesid')
+// const btnSettings = document.getElementById('btnSettingsid')
 
 btnFeeds.style.background = "black";
 btnFeeds.style.color = "whitesmoke";
@@ -25,19 +25,22 @@ btnFeeds.addEventListener("click", function() {
     btnFeeds.style.background = "black";
     btnFeeds.style.color = "whitesmoke";
     btnFeeds.style.borderRadius = "8px";
-    btnRoll.style.background = "transparent";
-    btnRoll.style.color = "black";
-    btnRoll.style.borderRadius = "8px";
+    btnRollBack.style.background = "transparent";
+    btnRollBack.style.color = "black";
+    btnRollBack.style.borderRadius = "8px";
 });
 
-btnRoll.addEventListener("click", function() {
-    btnRoll.style.background = "black";
-    btnRoll.style.color = "whitesmoke";
-    btnRoll.style.borderRadius = "8px";
+if(btnRollBack){
+  btnRollBack.addEventListener("click", function() {
+    btnRollBack.style.background = "black";
+    btnRollBack.style.color = "whitesmoke";
+    btnRollBack.style.borderRadius = "8px";
     btnFeeds.style.background = "transparent";
     btnFeeds.style.color = "black";
     btnFeeds.style.borderRadius = "8px";
-});
+  });
+}
+
 
 // // Left Container's Button Handle 
 // // Button News Feed
@@ -181,14 +184,24 @@ btnDarkMode.addEventListener('click', () => {
   }
 });
 // ------------------------------------------------------------------------------------------
+// ---------------------------------*** QUERY CÁC THÀNH PHẦN CẦN TƯƠNG TÁC NHIỀU ***---------------------------------------
+// 3 Khung chính của giao diện
+const leftCtn = document.getElementById('leftContainerID');
+const middleCtn = document.getElementById('middleContainerID');
+const rightCtn = document.getElementById('rightContainerID');
+// Left Container's Button
+const btnNewsFeed = document.getElementById('btnNewsFeedid')
+const btnNoti = document.getElementById('btnNotiid')
+const btnSearch = document.getElementById('btnSearchid')
+const btnMessages = document.getElementById('btnMessagesid')
+const btnSettings = document.getElementById('btnSettingsid')
+// ------------------------------------------------------------------------------------------
 
 // ----------------------------------*** EXPAND MEMU ***-------------------------------------
 var checkExpandMenu = false;
 const btnExpandMenu = document.getElementById('btnExpandMenuID')
 
 // query DOM
-const leftCtn = document.getElementById('leftContainerID')
-const middleCtn = document.getElementById('middleContainerID')
 
 const expandMenu = () => {
   leftCtn.className = "col l-2 m-5 c-5 leftContainer"
@@ -443,7 +456,7 @@ for(let i=0; i<postImages.length; i++){
 }
 // ------------------------------------------------------------------------------
 
-// ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL ***------------------
+// ---------------*** HIDE HEADER BAR WHEN SCROLL ***------------------
 var prevScrollpos = middleCtn.scrollTop;
 middleCtn.onscroll = function() {
   var currentScrollPos = middleCtn.scrollTop;
@@ -463,7 +476,7 @@ middleCtn.onscroll = function() {
 }
 // ------------------------------------------------------------------------------
 
-// ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL ***------------------
+// ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL (Chưa được) ***------------------
 //For iPhone and Andriod To remove Address bar when viewing website on Safari Mobile
 // When ready...
 window.addEventListener("load",function() {
@@ -473,4 +486,18 @@ window.addEventListener("load",function() {
   window.scrollTo(0, 1);
   }, 0);
 });
+// ------------------------------------------------------------------------------
+
+// ---------------*** JS Các nút bên thanh Menu ***------------------
+// *** Nút Profile
+const btnProfile = document.getElementById('btnProfileid');
+// Điều hướng nút Profile
+btnProfile.addEventListener('click', function(e){
+  window.location.href = 'profile.html';
+});
+// Điều hướng nút New feeds
+btnNewsFeed.addEventListener('click', function(e){
+  window.location.href = 'test.html';
+});
+
 // ------------------------------------------------------------------------------
