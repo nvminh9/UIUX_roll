@@ -126,6 +126,7 @@ const logoImg = document.getElementById('logoImgID');
 const postBack = document.getElementsByClassName('postBack');
 const btnDarkmodeID = document.getElementById('btnDarkmodeid');
 const btnAddfriend = document.getElementsByClassName('btnAddfriend');
+const btnProfileFeatures = document.getElementsByClassName('btnProfileFeatures');
 
 const enableDarkMode = () => {
   // 1. thêm class css 
@@ -139,6 +140,9 @@ const enableDarkMode = () => {
   }
   for(let i=0; i<btnAddfriend.length; i++){
     btnAddfriend[i].style.color = "whitesmoke";
+  }
+  for(let i=0; i<btnProfileFeatures.length; i++){
+    btnProfileFeatures[i].style.color = "whitesmoke";
   }
   btnDarkmodeID.innerHTML = `<i class="fa-solid fa-sun"></i><span>Light Mode</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-white-transparent.png" alt=""></a>`
@@ -158,6 +162,9 @@ const disableDarkMode = () => {
   }
   for(let i=0; i<btnAddfriend.length; i++){
     btnAddfriend[i].style.color = "black";
+  }
+  for(let i=0; i<btnProfileFeatures.length; i++){
+    btnProfileFeatures[i].style.color = "black";
   }
   btnDarkmodeID.innerHTML = `<i class="fa-solid fa-moon"></i><span>Dark Mode</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>`
@@ -500,4 +507,23 @@ btnNewsFeed.addEventListener('click', function(e){
   window.location.href = 'test.html';
 });
 
+// ------------------------------------------------------------------------------
+
+
+
+
+// ----------------------------*** TRANG CÁ NHÂN ***-----------------------------
+const refreshbtnProfileFeaturesActive = () => {
+  for(let i=0; i<btnProfileFeatures.length; i++){
+    btnProfileFeatures[i].style.borderBottom = "3px solid transparent";
+  }
+}
+
+for(let i=0; i<btnProfileFeatures.length; i++){
+  btnProfileFeatures[i].addEventListener('click', function(e){
+    refreshbtnProfileFeaturesActive();
+    btnProfileFeatures[i].style.borderBottom = "3px solid #243CFC";
+    // alert();
+  });
+}
 // ------------------------------------------------------------------------------

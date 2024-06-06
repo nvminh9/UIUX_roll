@@ -119,11 +119,23 @@ body{
     cursor: pointer;
     margin: 0px 5px;
     color: black;
+    transition: 0.20s;
+    -webkit-transition: 0.20s;
+    -moz-transition: 0.20s;
+    -ms-transition: 0.20s;
+    -o-transition: 0.20s;
+}
+.headerContainer .headerContainerMiddle li span{
+    font-size: 26px;
+    font-weight: 600;
 }
 .headerContainer .headerContainerMiddle li button:hover{
-    background: black;
-    color: whitesmoke;
-    border-radius: 8px;
+    transform: scale(1.05);
+    transition: 0.20s;
+    -webkit-transition: 0.20s;
+    -moz-transition: 0.20s;
+    -ms-transition: 0.20s;
+    -o-transition: 0.20s;
 }
 
 /* ----------- Hết CSS Header --------------------------------- */
@@ -1100,6 +1112,106 @@ body{
             -o-transition: 0.20s;
 }
 /* ---------------------------------------------------------------------- */
+
+/* ---------------------------*** CSS TRANG CÁ NHÂN ***------------------------------------ */
+.profileContainer{
+
+}
+.profileContainer .profileTopInfo{
+    padding: 0;
+    position: relative;
+}
+.profileContainer .profileTopInfo .coverImageContainer{
+    height: 225px;
+    width: 100%;
+}
+.profileContainer .profileTopInfo .coverImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+.profileContainer .profileTopInfo .avatarImageContainer{
+    position: absolute;
+    top: 57%;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+.profileContainer .profileTopInfo .avatarImageContainer img{
+    vertical-align: middle;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    border: 4px solid black;
+    cursor: pointer;
+}
+.profileContainer .profileTopInfo .profileOptions{
+
+}
+.profileContainer .profileTopInfo .profileOptions .btnEditProfile{
+    cursor: pointer;
+    background: #adadad;
+    color: black;
+    border: 1px solid black;
+    border-radius: 18px;
+    padding: 10px;
+    float: right;
+    transition: 0.10s;
+    margin: 5px;
+    margin-top: 10px;
+    -webkit-transition: 0.10s;
+    -moz-transition: 0.10s;
+    -ms-transition: 0.10s;
+    -o-transition: 0.10s;
+}
+.profileContainer .profileTopInfo .profileOptions .btnEditProfile:hover{
+    transform: scale(1.01);
+    transition: 0.10s;
+            -webkit-transition: 0.10s;
+            -moz-transition: 0.10s;
+            -ms-transition: 0.10s;
+            -o-transition: 0.10s;
+}
+.profileContainer .profileName{
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 22px;
+}
+.profileBottomInfo{
+    margin-top: 75px;
+    display: grid;
+}
+.profileBottomInfo .profileJoinAt, .profileFriendCount{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.profileFeatures{
+    display: flex;
+    border-bottom: .5px solid dimgrey;
+    margin-top: 15px;
+}
+.btnProfilePostList, .btnProfileFriendList{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+}
+.profileFeatures .btnProfilePostList:hover, .btnProfileFriendList:hover{
+    /* border-bottom: 3px solid #243CFC; */
+    background: #87878750;
+}
+.btnProfileFeaturesActive{
+    border-bottom: 3px solid #243CFC;
+}
+/* ---------------------------------------------------------------------------------------- */
 
 /* ------------------------- Media Query -------------------------------- */
 /***** Thiết bị có kích thước chiều rộng màn hình 320px - 739px (màn hình điện thoại) *****/
