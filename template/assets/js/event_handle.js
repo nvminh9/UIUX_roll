@@ -130,6 +130,7 @@ const btnProfileFeatures = document.getElementsByClassName('btnProfileFeatures')
 
 const enableDarkMode = () => {
   // 1. thêm class css 
+  document.body.classList.add('darkmode');
   wrapper.classList.add('darkmode');
   headerContainer.classList.add('headerDarkmode');
   for(let i=0; i<btnMenu.length; i++){
@@ -152,6 +153,7 @@ const enableDarkMode = () => {
 
 const disableDarkMode = () => {
   // 1. Bỏ lớp css 
+  document.body.classList.remove('darkmode');
   wrapper.classList.remove('darkmode');
   headerContainer.classList.remove('headerDarkmode');
   for(let i=0; i<btnMenu.length; i++){
@@ -211,8 +213,8 @@ const btnExpandMenu = document.getElementById('btnExpandMenuID')
 // query DOM
 
 const expandMenu = () => {
-  leftCtn.className = "col l-2 m-5 c-5 leftContainer"
-  middleCtn.className = "col l-7 m-7 c-7 middleContainer"
+  leftCtn.className = "col l-2 m-12 c-12 leftContainer"
+  middleCtn.className = "col l-7 m-0 c-0 middleContainer"
   checkExpandMenu = true
   console.log('Mở Menu')
 }
@@ -486,13 +488,13 @@ middleCtn.onscroll = function() {
 // ---------------*** HIDE SEARCH BAR ON SAFARI WHEN SCROLL (Chưa được) ***------------------
 //For iPhone and Andriod To remove Address bar when viewing website on Safari Mobile
 // When ready...
-window.addEventListener("load",function() {
-  // Set a timeout...
-  setTimeout(function(){
-  // Hide the address bar!
-  window.scrollTo(0, 1);
-  }, 0);
-});
+// window.addEventListener("load",function() {
+//   // Set a timeout...
+//   setTimeout(function(){
+//   // Hide the address bar!
+//   window.scrollTo(0, 1);
+//   }, 0);
+// });
 // ------------------------------------------------------------------------------
 
 // ---------------*** JS Các nút bên thanh Menu ***------------------
