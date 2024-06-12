@@ -508,7 +508,9 @@ btnProfile.addEventListener('click', function(e){
 btnNewsFeed.addEventListener('click', function(e){
   window.location.href = 'test.html';
 });
-
+btnNoti.addEventListener('click', function(e){
+  window.location.href = 'notification.html'
+});
 // ------------------------------------------------------------------------------
 
 
@@ -528,4 +530,208 @@ for(let i=0; i<btnProfileFeatures.length; i++){
     // alert();
   });
 }
+// ------------------------------------------------------------------------------
+
+// -------------------------*** Notification tab ***-----------------------------
+let templateTuongTac = `<!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i.pinimg.com/236x/5a/e1/9a/5ae19a4705e9083c1ed5efcb99ceaf94.jpg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">meowmeme</span> đã thích bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i.pinimg.com/564x/e2/01/65/e201653bbd985c7efe53bad36f612074.jpg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">woodfilms</span> đã bình luận vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png?ssl=1" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">thinhngo</span> đã bình luận vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i0.wp.com/sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png?ssl=1" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">thinhngo</span> đã thích vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i.pinimg.com/564x/e2/01/65/e201653bbd985c7efe53bad36f612074.jpg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">woodfilms</span> đã thích vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://www.datocms-assets.com/39109/1615914210-mcqueen-shalom-harlow-runway.jpeg?auto=format%2Ccompress&fit=clip&h=720&w=802" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">modelsreprise</span> đã thích vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Thông báo tương tác -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: left; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i.pinimg.com/236x/f4/4c/1d/f44c1db2c58a4017e35aa939c3b6e471.jpg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">meowgaugau</span> đã thích vào bài viết của bạn</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>`
+
+let templateLoiMoiKb = `<!-- Thông báo lời mời kết bạn -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: space-between; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://www.svgrepo.com/show/382102/male-avatar-boy-face-man-user-8.svg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">michael</span> đã gửi lời mời kết bạn</button>
+                                        </div>
+                                        <div class="friendInvitationOptions" style="display: flex; justify-content: center;">
+                                            <button style="border: none; background-color: #243CFC; padding: 5px; border-radius: 5px; cursor: pointer; color: whitesmoke; margin: 2px;">Xác nhận</button>
+                                            <button style="border: none; background-color: grey; padding: 5px; border-radius: 5px; cursor: pointer; color: whitesmoke; margin: 2px;">Hủy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Thông báo lời mời kết bạn -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px; border: .5px solid whitesmoke;">
+                                    <div class="poster" style="justify-content: space-between; align-items: center;">
+                                        <div class="posterAvatar">
+                                            <button class="btnPosterAvatar">
+                                                <img src="https://i.pinimg.com/564x/8a/09/3e/8a093ed95db0a8f6336fe662e6a09187.jpg" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="posterInfo" style="text-align: left;">
+                                            <button style="color: whitesmoke; font-size: 17px;"><span class="posterName" style="color: whitesmoke;">easymoneysniper</span> đã gửi lời mời kết bạn</button>
+                                        </div>
+                                        <div class="friendInvitationOptions" style="display: flex; justify-content: center;">
+                                            <button style="border: none; background-color: #243CFC; padding: 5px; border-radius: 5px; cursor: pointer; color: whitesmoke; margin: 2px;">Xác nhận</button>
+                                            <button style="border: none; background-color: grey; padding: 5px; border-radius: 5px; cursor: pointer; color: whitesmoke; margin: 2px;">Hủy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`         
+      
+// mẫu thông báo nếu ko có tin nhắn nào, hoặc người dùng chưa dùng tính năng nhắn tin                      
+let templateTbTinNhanNull = `<!-- Thông báo tin nhắn (nếu chưa có tin nhắn nào) -->
+                        <div class="row postWrapper">
+                            <div class="col l-12 m-12 c-12 postContainer">
+                                <div class="col l-12 m-12 c-12 postBack postHeader" style="border-radius: 15px;">
+                                    <div class="poster" style="display: grid; justify-content: center; align-items: center;">
+                                        <img src="https://abs.twimg.com/responsive-web/client-web/verification-check-800x400.v1.52677a99.png" alt="" style="width: 400px;">
+                                        <div class="posterInfo" style="width: 100%; justify-content: center;">
+                                            <button style="color: whitesmoke; font-size: 17px;">Chưa có tin nhắn nào</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>`                        
+
+const contentNotification = document.getElementById('contentNotificationID');    
+
+const btnTbCacTuongTac = document.getElementById('btnTbCacTuongTac');
+const btnTbLoiMoiKb = document.getElementById('btnTbLoiMoiKb');
+const btnTbTinNhan = document.getElementById('btnTbTinNhan');
+
+btnTbCacTuongTac.addEventListener('click', function(e){
+  contentNotification.innerHTML = templateTuongTac;
+});
+btnTbLoiMoiKb.addEventListener('click', function(e){
+  contentNotification.innerHTML = templateLoiMoiKb;
+});
+btnTbTinNhan.addEventListener('click', function(e){
+  contentNotification.innerHTML = templateTbTinNhanNull;
+});
 // ------------------------------------------------------------------------------
