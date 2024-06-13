@@ -216,14 +216,14 @@ const expandMenu = () => {
   leftCtn.className = "col l-2 m-12 c-12 leftContainer"
   middleCtn.className = "col l-7 m-0 c-0 middleContainer"
   checkExpandMenu = true
-  console.log('Mở Menu')
+  // console.log('Mở Menu')
 }
 
 const closeMenu = () => {
   leftCtn.className = "col l-2 m-0 c-0 leftContainer"
   middleCtn.className = "col l-7 m-12 c-12 middleContainer"
   checkExpandMenu = false
-  console.log('Đóng Menu')
+  // console.log('Đóng Menu')
 }
 
 btnExpandMenu.addEventListener('click', () => {
@@ -725,13 +725,48 @@ const btnTbCacTuongTac = document.getElementById('btnTbCacTuongTac');
 const btnTbLoiMoiKb = document.getElementById('btnTbLoiMoiKb');
 const btnTbTinNhan = document.getElementById('btnTbTinNhan');
 
-btnTbCacTuongTac.addEventListener('click', function(e){
-  contentNotification.innerHTML = templateTuongTac;
-});
-btnTbLoiMoiKb.addEventListener('click', function(e){
-  contentNotification.innerHTML = templateLoiMoiKb;
-});
-btnTbTinNhan.addEventListener('click', function(e){
-  contentNotification.innerHTML = templateTbTinNhanNull;
-});
+if(btnTbCacTuongTac){
+  btnTbCacTuongTac.addEventListener('click', function(e){
+    contentNotification.innerHTML = templateTuongTac;
+  });
+}
+if(btnTbLoiMoiKb){
+  btnTbLoiMoiKb.addEventListener('click', function(e){
+    contentNotification.innerHTML = templateLoiMoiKb;
+  });
+}
+if(btnTbTinNhan){
+  btnTbTinNhan.addEventListener('click', function(e){
+    contentNotification.innerHTML = templateTbTinNhanNull;
+  });
+}
+
 // ------------------------------------------------------------------------------
+
+// -------------------------*** Expand Storie Trên Mobile ***--------------------
+const btnExpandStory = document.getElementById('btnExpandStory');
+var checkExpandStory = false;
+
+const expandStoryContainer = () => {
+  middleCtn.className = "col l-7 m-0 c-0 middleContainer"
+  rightCtn.className = "col l-3 m-12 c-12 rightContainer"
+  checkExpandStory = true
+  // console.log('Mở Menu')
+}
+
+const closeStoryContainer = () => {
+  middleCtn.className = "col l-7 m-12 c-12 middleContainer"
+  rightCtn.className = "col l-3 m-0 c-0 rightContainer"
+  checkExpandStory = false
+  // console.log('Đóng Menu')
+}
+
+btnExpandStory.addEventListener('click', () => {
+  // kiểm tra xem menu đang đóng hay mở và thực hiện hành động ngược lại 
+  if(checkExpandStory === false){
+    expandStoryContainer();
+  }else{
+    closeStoryContainer();
+  }
+});
+// ------------------------------------------------------------------------------------------
