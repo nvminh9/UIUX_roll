@@ -325,7 +325,7 @@ for(let i=0;i<btnPlayStory.length; i++){
                     <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 <div class="mediaStoryActive">
-                    <video id="videoStoryActiveID" src="`+listStoryContent[indexStoryActive].src+`" autoplay loop></video>
+                    <video id="videoStoryActiveID" src="`+listStoryContent[indexStoryActive].src+`" autoplay loop playsinline></video>
                 </div>
                 <div class="interactStoryActive">
                     <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
