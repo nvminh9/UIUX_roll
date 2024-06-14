@@ -145,7 +145,7 @@ const enableDarkMode = () => {
   for(let i=0; i<btnProfileFeatures.length; i++){
     btnProfileFeatures[i].style.color = "whitesmoke";
   }
-  btnDarkmodeID.innerHTML = `<i class="fa-solid fa-sun"></i><span>Light Mode</span>`
+  btnDarkmodeID.innerHTML = `<i class="fa-solid fa-sun"></i><span>Màu sáng</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-white-transparent.png" alt=""></a>`
   // 2. cập nhật lại giá trị của biến darkMode trong Local Storage thành enabled
   localStorage.setItem('darkMode', 'enabled');
@@ -168,7 +168,7 @@ const disableDarkMode = () => {
   for(let i=0; i<btnProfileFeatures.length; i++){
     btnProfileFeatures[i].style.color = "black";
   }
-  btnDarkmodeID.innerHTML = `<i class="fa-solid fa-moon"></i><span>Dark Mode</span>`
+  btnDarkmodeID.innerHTML = `<i class="fa-solid fa-moon"></i><span>Màu tối</span>`
   logoImg.innerHTML = `<a href="#"><img src="assets/img/logo/roll-high-resolution-logo-black-transparent.png" alt=""></a>`
   // 2. cập nhật lại giá trị của biến darkMode trong Local Storage thành null 
   localStorage.setItem('darkMode', null);
@@ -505,12 +505,26 @@ btnProfile.addEventListener('click', function(e){
   window.location.href = 'profile.html';
 });
 // Điều hướng nút New feeds
-btnNewsFeed.addEventListener('click', function(e){
-  window.location.href = 'test.html';
+if(btnNewsFeed){
+  btnNewsFeed.addEventListener('click', function(e){
+    window.location.href = 'test.html';
 });
-btnNoti.addEventListener('click', function(e){
-  window.location.href = 'notification.html'
-});
+}
+if(btnNoti){
+  btnNoti.addEventListener('click', function(e){
+    window.location.href = 'notification.html'
+  });
+}
+if(btnSearch){
+  btnSearch.addEventListener('click', function(e){
+    window.location.href = 'search.html'
+  });
+}
+if(btnMessages){
+  btnMessages.addEventListener('click', function(e){
+    window.location.href = 'message.html'
+  });
+}
 // ------------------------------------------------------------------------------
 
 
