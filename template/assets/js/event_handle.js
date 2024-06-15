@@ -309,37 +309,28 @@ for(let i=0;i<btnPlayStory.length; i++){
     // index của video story;
     let indexStoryActive = i;
     console.log(indexStoryActive);
-    storyActiveContainer.style = "height: 100%; width: 100%; padding: 0; position: absolute; z-index: 1;";
+    storyActiveContainer.style = "height: 100%;width: 100%;padding: 0;position: absolute;z-index:1;background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(8px);";
     storyActiveTemplate = `<div id="storyActiveID" class="storyActive">
-    <div class="listStoryActiveContainer">
-        <button id="btnLeftStoryActiveID" class="btnLeftStoryActiveContainer">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <ul class="listStoryActive">
-            <li class="storyActive_content">
-                <div class="infoStoryActiveContainer">
-                    <img id="avatarStoryActiveID" src="`+listStoryInfo[indexStoryActive].children[0].src+`" alt="" class="avatarStoryActive">
-                    <span id="nameStoryActiveID" class="nameStoryActive">`+listStoryInfo[indexStoryActive].children[1].textContent+`</span>
-                    <!-- <button id="" class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button> -->
-                    <button id="btnMuteStoryActiveID" class="btnMuteStoryActive"><!-- <i class="fa-solid fa-volume-xmark"></i> --><i class="fa-solid fa-volume-high"></i></button>
-                    <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                <div class="mediaStoryActive">
-                    <video id="videoStoryActiveID" src="`+listStoryContent[indexStoryActive].src+`" autoplay loop playsinline></video>
-                </div>
-                <div class="interactStoryActive">
-                    <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
-                </div>
-            </li>
-            <!-- <li class="storyActive_content">
-    
-            </li> -->
-        </ul>
-        <button id="btnRightStoryActiveID" class="btnRightStoryActiveContainer">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-    </div>`
+                    <button id="btnLeftStoryActiveID" class="col l-1 m-2 c-2 btnLeftStoryActive">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div id="storyActiveContentID" class="col l-10 m-8 c-8 storyActiveContent">
+                        <div class="infoStoryActiveContainer">
+                            <img id="avatarStoryActiveID" src="`+listStoryInfo[indexStoryActive].children[0].src+`" alt="" class="avatarStoryActive">
+                            <span id="nameStoryActiveID" class="nameStoryActive">`+listStoryInfo[indexStoryActive].children[1].textContent+`</span>
+                            <!-- <button id="" class="btnPlayPauseStoryActive"><i class="fa-solid fa-play"></i></button> -->
+                            <button id="btnMuteStoryActiveID" class="btnMuteStoryActive"><!-- <i class="fa-solid fa-volume-xmark"></i> --><i class="fa-solid fa-volume-high"></i></button>
+                            <button id="btnCancelStoryActiveID" class="btnCancelStoryActive" onclick="cancelStoryActive()"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <video id="videoStoryActiveID" class="storyActiveContentSize" src="`+listStoryContent[indexStoryActive].src+`" autoplay loop playsinline></video>
+                        <div class="interactStoryActive">
+                            <button class="btnLikeStoryActive"><i class="fa-solid fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <button id="btnRightStoryActiveID" class="col l-1 m-2 c-2 btnRightStoryActive">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>`
     storyActiveContainer.innerHTML = storyActiveTemplate;
     // khung tên, avatar, video của story
     var nameStoryActive = document.getElementById('nameStoryActiveID');

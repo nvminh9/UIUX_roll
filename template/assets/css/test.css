@@ -851,91 +851,94 @@ body{
     background-color: black;
 }
 /* ------------------------------------------------------------ */
-/* ------------ *** CSS Story Active Container *** ------------ */
-.storyActiveContainer{
-    /* height: 100%;
-    width: 100%;
-    padding: 0;
-    position: absolute; 
-    z-index: 1; */
-}
+
+/* ------------------- CSS Story Active ----------------------- */
 .storyActiveContainer .storyActive{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(8px);
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.storyActiveContainer .storyActive .storyActiveContent{
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .btnLeftStoryActiveContainer, .btnRightStoryActiveContainer{
-    background-color: rgba(105, 105, 105, 0.475);
-    border: none;
-    padding: 15px 20px;
-    border-radius: 50%;
+.storyActiveContainer .storyActive .storyActiveContent video{
+    /* border: .5px solid #333; */
+    border-radius: 10px;
+}
+.storyActiveContainer .storyActive .btnLeftStoryActive, .btnRightStoryActive{
+    height: fit-content;
+    border: .5px solid #333;
+    font-size: 35px;
+    background: #87878750;
     cursor: pointer;
+    height: 9.5%;
+    border-radius: 0px 10px 10px 0px;
+}
+.storyActiveContainer .storyActive .btnRightStoryActive{
+    border-radius: 10px 0px 0px 10px;
+}
+.storyActiveContainer .storyActive .btnLeftStoryActive i, .btnRightStoryActive i{
     color: black;
     transition: 0.20s;
             -webkit-transition: 0.20s;
             -moz-transition: 0.20s;
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
-    
-}     
-.storyActiveContainer .storyActive .listStoryActiveContainer .btnLeftStoryActiveContainer:hover{
+}
+.storyActiveContainer .storyActive .btnLeftStoryActive:hover i{
     transform: translateX(-5px);
     transition: 0.20s;
             -webkit-transition: 0.20s;
             -moz-transition: 0.20s;
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
-}  
-.storyActiveContainer .storyActive .listStoryActiveContainer .btnRightStoryActiveContainer:hover{
+}
+.storyActiveContainer .storyActive .btnRightStoryActive:hover i{
     transform: translateX(5px);
     transition: 0.20s;
             -webkit-transition: 0.20s;
             -moz-transition: 0.20s;
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
-}   
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    height: 100%;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content{
-    height: 100%;   
-}
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer{
+/*  */
+/* phần trên của story active */
+.infoStoryActiveContainer{
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 5px;
     height: 9%;
+    position: absolute;
+    top: 5px;
+    z-index: 5;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .avatarStoryActive{
+.infoStoryActiveContainer .avatarStoryActive{
     vertical-align: middle;
     width: 55px;
     height: 55px;
     border-radius: 50%;
     object-position: center;
     object-fit: cover;
+    margin: 5px 20px;
+    border: .5px solid #333;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .nameStoryActive{
+.infoStoryActiveContainer .nameStoryActive{
     font-weight: 600;
-    background-color: #243dfc;
+    border: .5px solid #333;
+    background-color: rgba(255, 255, 255, 0.475);
     border-radius: 8px;
     padding: 2px;
+    margin: 5px 20px;
+    color: black;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnPlayPauseStoryActive{
+.infoStoryActiveContainer .btnPlayPauseStoryActive{
     background-color: rgba(105, 105, 105, 0.475);
     border: none;
     padding: 15px 20px;
@@ -948,8 +951,9 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 5px 20px;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnPlayPauseStoryActive:hover{
+.infoStoryActiveContainer .btnPlayPauseStoryActive:hover{
     background-color: rgba(187, 187, 187, 0.475);
     transition: 0.20s;
             -webkit-transition: 0.20s;
@@ -957,11 +961,11 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnMuteStoryActive{
+.infoStoryActiveContainer .btnMuteStoryActive{
     background-color: rgba(105, 105, 105, 0.475);
-    border: none;
+    border: .5px solid #333;
     padding: 15px 20px;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
     color: black;
     transition: 0.20s;
@@ -970,8 +974,9 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 5px 20px;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnMuteStoryActive:hover{
+.infoStoryActiveContainer .btnMuteStoryActive:hover{
     background-color: rgba(187, 187, 187, 0.475);
     transition: 0.20s;
             -webkit-transition: 0.20s;
@@ -979,11 +984,12 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnCancelStoryActive{
+.infoStoryActiveContainer .btnCancelStoryActive{
     background-color: rgba(105, 105, 105, 0.475);
     border: none;
+    border: .5px solid #333;
     padding: 15px 20px;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
     color: black;
     transition: 0.20s;
@@ -992,8 +998,9 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 5px 20px;
 }
-.storyActiveContainer .storyActive .listStoryActiveContainer .listStoryActive .storyActive_content .infoStoryActiveContainer .btnCancelStoryActive:hover{
+.infoStoryActiveContainer .btnCancelStoryActive:hover{
     background-color: rgba(187, 187, 187, 0.475);
     transition: 0.20s;
             -webkit-transition: 0.20s;
@@ -1001,29 +1008,21 @@ body{
             -ms-transition: 0.20s;
             -o-transition: 0.20s;
 }
-/* phần video/image */
-.storyActive_content .mediaStoryActive{
-    padding: 5px;
-    height: 82%;
-}
-.storyActive_content .mediaStoryActive video{
-    border-radius: 15px;
-    height: 100%;
-}
-/* hết phần video/image */
-/* phần tương tác */
-.storyActive_content .interactStoryActive{
+/* hết phần trên của story active */
+/* CSS phần dưới của Story Active */
+.interactStoryActive{
     display: grid;
     justify-content: center;
     align-items: center;
     height: 9%;
-    
+    position: absolute;
+    bottom: 5px;
 }
-.storyActive_content .interactStoryActive .btnLikeStoryActive{
-    background-color: #f56a6a84;
-    border: 3px solid #d63031;
+.interactStoryActive .btnLikeStoryActive{
+    background-color: #1e1e1e50;
+    border: 1px solid #484848;
     padding: 15px 20px;
-    border-radius: 50%;
+    border-radius: 15px;
     cursor: pointer;
     color: black;
     font-size: 18px;
@@ -1034,14 +1033,15 @@ body{
             -o-transition: 0.20s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.storyActive_content .interactStoryActive .btnLikeStoryActive i{
+.interactStoryActive .btnLikeStoryActive i{
+    color: #484848;
     transition: 0.30s;
             -webkit-transition: 0.30s;
             -moz-transition: 0.30s;
             -ms-transition: 0.30s;
             -o-transition: 0.30s;
 }
-.storyActive_content .interactStoryActive .btnLikeStoryActive:hover i{
+.interactStoryActive .btnLikeStoryActive:hover i{
     transform: scale(1.2);
     transition: 0.30s;
             -webkit-transition: 0.30s;
@@ -1049,21 +1049,11 @@ body{
             -ms-transition: 0.30s;
             -o-transition: 0.30s;
 }
-/* hết phần tương tác */
-/* ----------------------- Hết CSS Story Active Container ------------------------------------- */
+/* hết phần dưới của story Active */
+/* ---------------------------------------------------------------------- */
 
-/* ------------------- CSS Image Active Container ----------------------- */
-.imageActiveContainer{
-    /* height: 100%;
-    width: 100%;
-    padding: 0;
-    position: absolute;
-    z-index: 1; */
-}
+/* ------------------- CSS Image Active ----------------------- */
 .imageActiveContainer .imageActive{
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.54) 100%);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(8px); */
     height: 100%;
     width: 100%;
     display: flex;
@@ -1220,10 +1210,16 @@ body{
     .imageActiveContentSize{
         width: 100%;
     }
+    .storyActiveContentSize{
+        width: 100%;
+    }
 }
 /***** Thiết bị có kích thước chiều rộng màn hình 740px - 1023px (màn hình tablet và laptop nhỏ) *****/
 @media (min-width: 740px) and (max-width: 1023px) {
     .imageActiveContentSize{
+        width: 100%;
+    }
+    .storyActiveContentSize{
         width: 100%;
     }
 }
@@ -1233,6 +1229,9 @@ body{
         /* width: 100%; */
         height: 100%;
     }
+    .storyActiveContentSize{
+        height: 100%;
+    }
 }
 /***** Thiết bị có kích thước chiều rộng màn hình >= 740px (màn từ Tablet trở lên) *****/
 @media (min-width: 740px) {
@@ -1240,11 +1239,17 @@ body{
         /* width: 100%; */
         height: 100%;
     }
+    .storyActiveContentSize{
+        height: 100%;
+    }
 }
 /***** Thiết bị có kích thước chiều rộng màn hình >= 1113px (PC or Laptop có màn lớn) *****/
 @media (min-width: 1113px){
     .imageActiveContentSize{
         /* width: 100%; */
+        height: 100%;
+    }
+    .storyActiveContentSize{
         height: 100%;
     }
 }
